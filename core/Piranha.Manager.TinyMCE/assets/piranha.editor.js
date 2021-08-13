@@ -40,7 +40,7 @@ piranha.editor.addInline = function (id, toolbarId) {
             }
         }
     });
-    $("#" + id).parent().append("<a class='tiny-brand' href='https://www.tiny.cloud' target='tiny'>Powered by Tiny</a>");
+    // $("#" + id).parent().append("<a class='tiny-brand' href='https://www.tiny.cloud' target='tiny'>Powered by Tiny</a>");
 };
 
 //
