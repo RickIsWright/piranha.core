@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace Piranha.Data.EF.MySql
 {
+   
     /// <summary>
     /// Factory for creating a db context. Only used in dev mode
     /// when creating migrations.
@@ -29,7 +30,10 @@ namespace Piranha.Data.EF.MySql
         public MySqlDb CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<MySqlDb>();
-            builder.UseMySql("Server=localhost;Port=8889;Database=piranha;User=root;Password=root;");
+            string mySqlConnectionString = "Server=localhost; Port=8889; Database=piranha; User=root; Password=root;" ;
+            //optional: var serverVersion = new MySqlServerVersion(new System.Version(8, 0, 21));
+            builder.UseMySql(ServerVersion.AutoDetect(mySqlConnectionString));
+
             return new MySqlDb(builder.Options);
         }
     }
