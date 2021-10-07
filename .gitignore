@@ -262,3 +262,7 @@ _Pvt_Extensions
 
 # Rider generated files
 .idea
+
+# Rick Wright Ignore the appsettings.json
+*appsettings.json
+/examples/MvcWeb/wwwroot/assets/
