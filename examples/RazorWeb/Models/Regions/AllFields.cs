@@ -30,13 +30,13 @@ namespace RazorWeb.Models.Regions
         [Field]
         public DataSelectField<PageItem> MyPage { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for AudioField.")]
         public AudioField Audio { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for CheckBoxField")]
         public CheckBoxField CheckBox { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for ColorField")]
         [ColorFieldSettings(DisallowInput = true)]
         public ColorField Color { get; set; }
 
@@ -51,44 +51,45 @@ namespace RazorWeb.Models.Regions
         [ContentFieldSettings(Group = "Products")]
         public ContentField Product { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for DateField")]
         public DateField Date { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for HtmlField")]
         public HtmlField Html { get; set; }
 
-        [Field(Options = FieldOption.HalfWidth, Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Options = FieldOption.HalfWidth, Placeholder = "PlaceHolder Text for DocumentField")]
         public DocumentField Document { get; set; }
 
-        [Field(Options = FieldOption.HalfWidth, Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Options = FieldOption.HalfWidth, Placeholder = "PlaceHolder Text for ImageField")]
         public ImageField Image { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for MediaField")]
         public MediaField Media { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
-        [FieldDescription("Duis mollis, est non <strong>commodo luctus</strong>, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.")]
+        [Field(Placeholder = "PlaceHolder Text for VideoField.")]
+        [FieldDescription("Describe Video <strong>and video emphasis</strong> with final info here.")]
         public VideoField Video { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for MarkdownField")]
         public MarkdownField Markdown { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for NumberField int or null")]
         public NumberField Number { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for PageField")]
         public PageField Page { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for PostField")]
         public PostField Post { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for StringField which is always a string")]
         [StringFieldSettings(MaxLength = 8)]
         public StringField String { get; set; }
 
-        [Field(Placeholder = "Etiam porta sem malesuada magna mollis euismod.")]
+        [Field(Placeholder = "PlaceHolder Text for TextField.")]
         public TextField Text { get; set; }
 
+        // Select Field Does Not Have a placeholder
         [Field]
         public SelectField<StyleType> Style { get; set; }
     }

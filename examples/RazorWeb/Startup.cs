@@ -18,24 +18,57 @@ using Piranha.Data.EF.SQLite;
 using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
 using Piranha.Local;
+using RazorWeb.Models;
+using Piranha.Data.EF.SQLServer;
+using Piranha.AspNetCore.Identity.SQLServer;
+using Microsoft.Extensions.Configuration;
 
 namespace RazorWeb
 {
     public class Startup
     {
+        private readonly IConfiguration _config;
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            _config = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPiranha(options =>
             {
-                options.AddRazorRuntimeCompilation = true;
+                options.AddRazorRuntimeCompilation = true; // Disable for Production use. Set to false.
 
                 options.UseFileStorage(naming: FileStorageNaming.UniqueFolderNames);
                 options.UseImageSharp();
                 options.UseManager();
                 options.UseTinyMCE();
                 options.UseMemoryCache();
+                // Other options for headless
+                // Convenience method for disabling all Piranha middleware components. 
+                // options.DisableRouting(); // Disables All routing features of Piranha default is enabled
+                // options.UseAliasRouting = true; // default is true.
+                // options.UseArchiveRouting = false; // default is true.
+                // options.UsePageRouting = true; // default is true
+                // options.UsePostRouting = true; // default is true
+                // options.UseSitemapRouting = true; // default is true.MiddleWare listens for request to /Sitemap.xml
+                // options.UseSiteRouting = true; // Enable site routing. can be disabled if only one site exists.
+                // options.UseStartpageRouting = true; // enabled in middleware. default is true
+
+                string conStringSf = Configuration.GetConnectionString("piranhasf");
+                // sql server
+                //options.UseEF<SQLServerDb>(db =>
+                //    db.UseSqlServer(Configuration.GetConnectionString("piranhasf")));
+
+                //options.UseIdentityWithSeed<IdentitySQLServerDb>(db =>
+                //db.UseSqlServer(Configuration.GetConnectionString("piranhasf")));
+
 
                 options.UseEF<SQLiteDb>(db =>
                     db.UseSqlite("Filename=./piranha.razorweb.db"));
@@ -57,10 +90,10 @@ namespace RazorWeb
                 app.UseDeveloperExceptionPage();
             }
 
-            App.Init(api);
+            App.Init(api); // Piranha.App.Init() Method
 
             // Configure cache level
-            App.CacheLevel = Piranha.Cache.CacheLevel.Full;
+            App.CacheLevel = Piranha.Cache.CacheLevel.Basic; //using none while developing ;
 
             // Register custom components
             App.Blocks.Register<RazorWeb.Models.Blocks.MyGenericBlock>();
@@ -70,9 +103,10 @@ namespace RazorWeb
 
             // Build content types
             new ContentTypeBuilder(api)
-                .AddAssembly(typeof(Startup).Assembly)
+                .AddAssembly(typeof(Startup).Assembly) // ads all content types
+               // .AddType(typeof(SimplePage))
                 .Build()
-                .DeleteOrphans();
+                .DeleteOrphans(); // not deleting orphans yet.
 
             // Configure editor
             Piranha.Manager.Editor.EditorConfig.FromFile("editorconfig.json");
@@ -90,10 +124,10 @@ namespace RazorWeb
             {
                 options.UseManager();
                 options.UseTinyMCE();
-                options.UseIdentity();
+                options.UseIdentity(); 
             });
 
-            Seed.RunAsync(api).GetAwaiter().GetResult();
+            // Seed.RunAsync(api).GetAwaiter().GetResult();
         }
     }
 }

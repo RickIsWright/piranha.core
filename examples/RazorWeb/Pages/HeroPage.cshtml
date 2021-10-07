@@ -1,0 +1,28 @@
+﻿@page
+@model HeroPageModel
+@{
+    ViewData["Title"] = Model.Data.Title;
+}
+@section head
+{
+    @WebApp.MetaTags(Model.Data)
+
+
+    <script type="text/javascript">
+        // new script functions here.
+       // var alrt = alert('hello');
+    </script>
+
+}
+
+@Html.DisplayFor(m => m.Data.Hero)
+
+<div class="container body-container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 col-xs-12">
+            @Html.DisplayFor(m => m.Data.Blocks)
+        </div>
+    </div>
+</div>
+
+

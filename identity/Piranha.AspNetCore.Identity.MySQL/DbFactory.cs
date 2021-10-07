@@ -29,7 +29,10 @@ namespace Piranha.AspNetCore.Identity.MySQL
         public IdentityMySQLDb CreateDbContext(string[] args) 
         {
             var builder = new DbContextOptionsBuilder<IdentityMySQLDb>();
-            builder.UseMySql("server=localhost;port=3306;database=piranha;uid=root;password=password");
+          
+            string cnnStr = "server=localhost;port=3306;database=piranha;uid=root;password=password";
+            MySqlServerVersion version = new MySqlServerVersion(ServerVersion.AutoDetect(cnnStr));
+            builder.UseMySql(version );
             return new IdentityMySQLDb(builder.Options);
         }
     }

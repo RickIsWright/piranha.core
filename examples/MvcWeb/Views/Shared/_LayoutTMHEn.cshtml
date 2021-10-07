@@ -1,0 +1,282 @@
+@using Microsoft.AspNetCore.Hosting
+@using Microsoft.Extensions.Hosting
+@inject IWebHostEnvironment Env
+
+<!doctype html>
+<html lang="en">
+<head>
+    @if (!User.Identity.IsAuthenticated && !Env.IsDevelopment())
+    {
+        <!-- Insert Google Analytics here -->
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="Rick Wright">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:700|Open+Sans:300,400,600">
+    <link rel="stylesheet" href="~/assets/css/plugins.css">
+
+
+
+    <link rel="shortcut icon" href="~/assets/tmh/img/logos/favicon.png" />
+    <link rel="shortcut icon" href="~/assets/tmh/img/logos/favicon.png">
+    <link rel="apple-touch-icon" href="~/assets/tmh/img/logos/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/assets/tmh/img/logos/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/assets/tmh/img/logos/apple-touch-icon-114x114.png">
+
+    <!-- plugins -->
+    @*<link rel="stylesheet" href="css/plugins.css" />*@
+
+    <!-- search css -->
+    <link rel="stylesheet" href="~/assets/search/search.css">
+
+    <!-- core style css -->
+    <link href="~/assets/css/styles.css" rel="stylesheet">
+
+    <title>@ViewBag.Title</title>
+
+    @RenderSection("head", required: false)
+    <style>
+        body {
+            margin-top: 0px;
+           /* border-top: solid 1px #333; -18 px*/
+        }
+
+            body:before, body:after {
+                content: "";
+                position: fixed;
+                background: #777;
+                left: 0px;
+                right: 0px;
+                height: 2px;
+            }
+
+            body:before {
+                top: 0;
+            }
+
+            body:after {
+                bottom: 0;
+            }
+
+        /*body {
+            border-left: 10px solid #900;
+            border-right: 10px solid #900;
+        }*/
+        .container-fluid {
+           /*  padding-top:0px;
+            padding-bottom:15px; */
+            padding-left: 0px;
+            padding-right:0px;
+            margin-top:0;
+        }
+
+
+        .main-wrapper {
+            height: 100vh;
+        }
+
+        .logowhite{
+            margin-top: 15px;
+        }
+        .logowhite img{height: 308px;}
+
+        body {
+  padding-top: 0px;
+}
+    @@media (max-width: 1920px) {
+        body {
+                padding-top: 0px;
+                }
+                }
+    </style>
+</head>
+<body>
+    <!-- start page loading was 979 -->
+    <div id="preloader">
+        <div class="row loader">
+            <div class="loader-icon"></div>
+        </div>
+    </div>
+    <!-- end page loading -->
+    <!-- start main-wrapper section -->
+    <div style="padding-top:3.5rem;">&nbsp;</div>
+    <div class="main-wrapper">
+        <!-- start header section -->
+
+        <header role="banner" class="header-style1 menu_area-light">
+            <div class="menu">
+                <div class="container-fluid fullscreen-container">
+                    <div class="row align-items-center">
+                        <div class="col-sm">
+                            <partial name="Partial/_MenuTMH2.cshtml" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*TODO: put partial with this dynamic information*@
+            <div class="container-fluid p-3 text-warning">Chat Hours: M-F 8 a.m. - 5 p.m.</div>
+        </header>
+
+        <!-- end header section -->
+
+        <div class="container-fluid fullscreen-container">
+            @RenderBody()
+            <!-- start scroll to top -->
+            <a href="javascript:void(0)" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+            <!-- end scroll to top -->
+            <!-- start footer section -->
+            <!--<footer class="bg-img background-size-contain" data-overlay-dark="1" data-background="img/content/dotted-map.png">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-12 sm-margin-30px-bottom">
+                            <div class="margin-15px-bottom"><img src="img/logos/logo-footer.png" alt="" /></div>
+                            <p class="margin-15px-bottom">Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                            <p class="margin-10px-bottom"><i class="fas fa-map-marker-alt text-hightlight-color padding-10px-right"></i><strong class="text-white padding-10px-right opacity7">Address:</strong><span>74 Guild Street 542B, Town MT.</span></p>
+                            <p class="margin-10px-bottom"><i class="fas fa-phone text-hightlight-color padding-10px-right"></i><strong class="text-white padding-10px-right opacity7">Phone:</strong><span>(+44) 123 456 789</span></p>
+                            <p><i class="fas fa-envelope text-hightlight-color padding-10px-right"></i><strong class="text-white padding-10px-right opacity7">Email:</strong><a href="javascript:void(0)"><span>addyour@emailhere</span></a></p>
+
+                        </div>
+                        <div class="col-lg-5 col-md-12 sm-margin-30px-bottom">
+                            <h3 class="small-title text-white">Quick Links</h3>
+                            <ul class="list-style3">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="donate-now.html">Donate Now</a></li>
+                                <li><a href="volunteer.html">Volunteer</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="causes-list.html">Causes List</a></li>
+                                <li><a href="event-details.html">Event Details</a></li>
+                                <li><a href="causes-detail.html">Causes Detail</a></li>
+                                <li><a href="blog-default.html">Blog Default</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-12">
+                            <h3 class="small-title text-white">Instagram</h3>
+                            <div class="instagram-post">
+                                <div class="single-post">
+                                    <a href="javascript:void(0)"><img src="img/instagram/insta-01.jpg" alt=""></a>
+                                </div>
+                                <div class="single-post">
+                                    <a href="javascript:void(0)"><img src="img/instagram/insta-02.jpg" alt=""></a>
+                                </div>
+                                <div class="single-post">
+                                    <a href="javascript:void(0)"><img src="img/instagram/insta-03.jpg" alt=""></a>
+                                </div>
+                                <div class="single-post">
+                                    <a href="javascript:void(0)"><img src="img/instagram/insta-04.jpg" alt=""></a>
+                                </div>
+                                <div class="single-post">
+                                    <a href="javascript:void(0)"><img src="img/instagram/insta-05.jpg" alt=""></a>
+                                </div>
+                                <div class="single-post">
+                                    <a href="javascript:void(0)"><img src="img/instagram/insta-06.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 text-left xs-text-center xs-margin-5px-bottom">
+                                <div class="footer-social-icons small">
+                                    <ul>
+                                        <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-right xs-text-center">
+                                <p class="xs-margin-5px-top xs-font-size13">&copy; 2019 TMH is Powered by TakeMyHand</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>-->
+            <!-- end footer section -->
+        </div>
+        <!-- end container for RenderBody-->
+
+    </div>
+    <!-- end main-wrapper section -->
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>*@
+
+
+    <!-- all js include start -->
+    <!-- jQuery 1.12.4 -->
+    @*<script src="~/assets/js/jquery.min.js"></script>*@
+
+    <!-- modernizr js -->
+    <script src="~/assets/js/modernizr.js"></script>
+
+    <!--jquery 3.6.0 jquery core-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <!-- Jquery migrate 3.3.2 -->
+    <script src="~/assets//js/jquery-migrate-3.3.2.min.js"></script>
+    <!-- jquery slim 3.3.1 version-->
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>*@
+
+    <!-- PopperJS script for bootstrap 4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <!-- bootstrap 4.3.1 -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+    @*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>*@
+
+
+    <!-- Serch -->
+    <script src="~/assets/search/search.js"></script>
+
+    <!-- navigation -->
+    <script src="~/assets/js/nav-menu.js"></script>
+
+    <!-- tab -->
+    <script src="~/assets/js/easy.responsive.tabs.js"></script>
+
+    <!-- owl carousel -->
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+
+    <!-- jquery.counterup.min -->
+    <script src="~/assets/js/jquery.counterup.min.js"></script>
+
+    <!-- stellar js -->
+    <script src="~/assets/js/stellar.js"></script>
+
+    <!-- waypoints js -->
+    <script src="~/assets/js/waypoints.min.js"></script>
+
+    <!-- countdown js -->
+    <script src="~/assets/js/countdown.js"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- isotope.pkgd.min js -->
+    <script src="~/assets/js/isotope.pkgd.min.js"></script>
+
+    <!-- map js -->
+    <script src="~/assets/js/map.js"></script>
+
+    <!-- custom scripts -->
+    <script src="~/assets/js/main.js"></script>
+
+    <!-- contact form scripts -->
+    <script src="~/assets/js/mailform/jquery.form.min.js"></script>
+    <script src="~/assets/js/mailform/jquery.rd-mailform.min.c.js"></script>
+
+    <!-- all js include end -->
+
+    @RenderSection("script", required: false)
+</body>
+</html>

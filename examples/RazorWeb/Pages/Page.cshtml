@@ -8,12 +8,14 @@
     @WebApp.MetaTags(Model.Data)
 }
 
-@Html.DisplayFor(m => m.Data.Hero)
-
+@*@Html.DisplayFor(m => m.Data.Hero)*@
+<!-- removed class body-container-->
 <div class="container body-container">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-xs-12">
+        <div class="col-lg-12 col-md-10 col-xs-12">
+
             @Html.DisplayFor(m => m.Data.Blocks)
         </div>
     </div>
+   
 </div>

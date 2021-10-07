@@ -1,0 +1,29 @@
+@using MvcWeb.Models
+@model ResourceCatalogViewModel
+@{
+  ViewBag.Title = Model.ResourceCatalogPage.Title;
+}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-10">
+      <h1 class="display-3">@Model.ResourceCatalogPage.Title</h1>
+    </div>
+  </div>
+  <div class="row">
+  @foreach(ResourceCategoryItem c in Model.ResourceCategories)
+  {
+    <div class="col-sm-4">
+      <a class="card-link" href="@c.PageUrl">
+        <div class="card border-dark" style="width: 18rem;">
+          <img class="card-img-top" src="@c.ImageUrl" 
+            alt="Image of @c.Title" asp-append-version="true" />
+          <div class="card-body">
+            <h5 class="card-title text-info">@c.Title</h5>
+            <div class="card-text text-info">@Html.Raw(c.Description)</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  }
+  </div>
+</div>

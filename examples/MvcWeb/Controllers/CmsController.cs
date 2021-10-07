@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using Piranha.AspNetCore.Services;
 using Piranha.Models;
+using MvcWeb.Models;
 
 namespace MvcWeb.Controllers
 {
@@ -120,6 +121,169 @@ namespace MvcWeb.Controllers
                 }
                 return View("startpage", model);
             }
+            return View(model);
+        }
+
+        [Route("catalog")]
+        public async Task<IActionResult> Catalog(Guid id)
+        {
+            var catalog = await _api.Pages.GetByIdAsync<CatalogPage>(id);
+
+            var model = new CatalogViewModel
+            {
+                CatalogPage = catalog,
+                Categories = (await _api.Sites.GetSitemapAsync())
+                // get the catalog page
+                .Where(item => item.Id == catalog.Id)
+                // get its children
+                .SelectMany(item => item.Items)
+                // for each child sitemap item, get the page
+                // and return a simplified model for the view
+                .Select(item =>
+                {
+                    var page = _api.Pages.GetByIdAsync<CategoryPage>
+                (item.Id).Result;
+
+                    var ci = new CategoryItem
+                    {
+                        Title = page.Title,
+                        Description = page.CategoryDetail.Description,
+                        PageUrl = page.Permalink,
+                        ImageUrl = page.CategoryDetail.CategoryImage
+                  .Resize(_api, 200)
+                    };
+                    return ci;
+                })
+            };
+            return View(model);
+        }
+
+
+
+        [Route("resource-catalog")]
+        // [Route("faq")]
+        public async Task<IActionResult> ResourceCatalog(Guid id)
+        {
+            var catalog = await _api.Pages.GetByIdAsync<ResourceCatalogPage>(id);
+
+            var model = new ResourceCatalogViewModel
+            {
+                ResourceCatalogPage = catalog,
+                ResourceCategories = (await _api.Sites.GetSitemapAsync())
+                // get the catalog page
+                .Where(item => item.Id == catalog.Id)
+                // get its children
+                .SelectMany(item => item.Items)
+                // for each child sitemap item, get the page
+                // and return a simplified model for the view
+                .Select(item =>
+                {
+                    var page = _api.Pages.GetByIdAsync<ResourceCategoryPage>
+                (item.Id).Result;
+
+                    var ci = new ResourceCategoryItem
+                    {
+                        Title = page.Title,
+                        Description = page.ResourceCategoryDetail.Description,
+                        PageUrl = page.Permalink,
+                        ImageUrl = page.ResourceCategoryDetail.CategoryImage
+                  .Resize(_api, 200)
+                    };
+                    return ci;
+                })
+            };
+            return View(model);
+        }
+
+        // faq
+        [Route("/faq")]
+        public async Task<IActionResult> Faq(Guid id)
+        {
+            var catalog = await _api.Pages.GetByIdAsync<FaqPage>(id);
+
+            var model = new MvcWeb.Models.FaqViewModel
+            {
+                FaqPage = catalog,
+                ResourceCategories = (await _api.Sites.GetSitemapAsync())
+                // get the catalog page
+                .Where(item => item.Id == catalog.Id)
+                // get its children
+                .SelectMany(item => item.Items)
+                // for each child sitemap item, get the page
+                // and return a simplified model for the view
+                .Select(item =>
+                {
+                    var page = _api.Pages.GetByIdAsync<ResourceCategoryPage>
+                (item.Id).Result;
+
+                    var ci = new MvcWeb.Models.ResourceCategoryItem
+                    {
+                        Title = page.Title,
+                        Description = page.ResourceCategoryDetail.Description,
+                        PageUrl = page.Permalink,
+                        ImageUrl = page.ResourceCategoryDetail.CategoryImage
+                  .Resize(_api, 200)
+                    };
+                    return ci;
+                })
+            };
+
+            return View(model);
+        }
+
+
+        [Route("catalog-category")]
+        public async Task<IActionResult> Category(Guid id)
+        {
+            var model = await _api.Pages
+              .GetByIdAsync<Models.CategoryPage>(id);
+            return View(model);
+        }
+
+
+
+        [Route("resource-catalog-resource-category")]
+        [Route("faq-resource-category")]
+        public async Task<IActionResult> ResourceCategory(Guid id)
+        {
+            var model = await _api.Pages
+              .GetByIdAsync<Models.ResourceCategoryPage>(id);
+            return View(model);
+        }
+
+
+        [Route("video-catalog")]
+        // [Route("faq")]
+        public async Task<IActionResult> VideoCatalog(Guid id)
+        {
+            var catalog = await _api.Pages.GetByIdAsync<VideoCatalogPage>(id);
+
+            var model = new VideoCatalogViewModel
+            {
+                VideoCatalogPage = catalog,
+                VideoItems = (await _api.Sites.GetSitemapAsync())
+                // get the catalog page
+                .Where(item => item.Id == catalog.Id)
+                // get its children
+                .SelectMany(item => item.Items)
+                // for each child sitemap item, get the page
+                // and return a simplified model for the view
+                .Select(item =>
+                {
+                    var page = _api.Pages.GetByIdAsync<VideoCategoryPage>
+                (item.Id).Result;
+
+                    var ci = new VideoItem
+                    {
+                        Title = page.Title,
+                        Description = page.CategoryDetail.Description,
+                        PageUrl = page.Permalink,
+                        ImageUrl = page.CategoryDetail.VideoImage
+                  .Resize(_api, 200)
+                    };
+                    return ci;
+                })
+            };
             return View(model);
         }
     }

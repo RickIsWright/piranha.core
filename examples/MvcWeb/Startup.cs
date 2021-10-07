@@ -18,29 +18,48 @@ using Piranha.Data.EF.SQLite;
 using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
 using Piranha.Local;
+using Piranha.Data.EF.SQLServer;
+using Microsoft.Extensions.Configuration;
+using Piranha.AspNetCore.Identity.SQLServer;
+using Piranha.Extend.Blocks;
 
 namespace MvcWeb
 {
     public class Startup
     {
+
+        private readonly IConfiguration _config;
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPiranha(options =>
             {
-                options.AddRazorRuntimeCompilation = true;
+                // options.AddRazorRuntimeCompilation = true;
 
                 options.UseFileStorage(naming: FileStorageNaming.UniqueFolderNames);
                 options.UseImageSharp();
                 options.UseManager();
                 options.UseTinyMCE();
                 options.UseMemoryCache();
+                // sql server
+                options.UseEF<SQLServerDb>(db =>
+                    db.UseSqlServer(Configuration.GetConnectionString("piranharuhsbh"))); // piranhasf // piranharuhsbh
+                options.UseIdentityWithSeed<IdentitySQLServerDb>(db =>
+                db.UseSqlServer(Configuration.GetConnectionString("piranharuhsbh")));
 
-                options.UseEF<SQLiteDb>(db =>
-                    db.UseSqlite("Filename=./piranha.mvcweb.db"));
-                options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
-                    db.UseSqlite("Filename=./piranha.mvcweb.db"));
+
+                //options.UseEF<SQLiteDb>(db =>
+                //    db.UseSqlite("Filename=./piranha.mvcweb.db"));
+                //options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
+                //    db.UseSqlite("Filename=./piranha.mvcweb.db"));
 
                 options.UseSecurity(o =>
                 {
@@ -61,6 +80,8 @@ namespace MvcWeb
 
             // Configure cache level
             App.CacheLevel = Piranha.Cache.CacheLevel.Full;
+
+            Piranha.App.Blocks.Register<YoutubeBlock>();
 
             // Build content types
             new ContentTypeBuilder(api)
@@ -87,7 +108,7 @@ namespace MvcWeb
                 options.UseIdentity();
             });
 
-            Seed.RunAsync(api).GetAwaiter().GetResult();
+             // Seed.RunAsync(api).GetAwaiter().GetResult();
         }
     }
 }

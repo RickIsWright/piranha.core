@@ -4,9 +4,709 @@
     <NoWarn>$(NoWarn);1591</NoWarn>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Remove="Views\Cms\DisplayTemplates\ImageGalleryBlockFSa.cshtml" />
+    <Content Remove="wwwroot\assets\css\styles.css" />
+    <Content Remove="wwwroot\assets\css\styles.css.map" />
+    <Content Remove="wwwroot\assets\img\banner\page-title.jpg" />
+    <Content Remove="wwwroot\assets\img\banner\slide1.jpg" />
+    <Content Remove="wwwroot\assets\img\banner\slide2.jpg" />
+    <Content Remove="wwwroot\assets\img\banner\slide3.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\01.png" />
+    <Content Remove="wwwroot\assets\img\blog\02.png" />
+    <Content Remove="wwwroot\assets\img\blog\03.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog-1.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-2.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-3.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-4.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-5.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-6.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-thamnail01.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-thamnail02.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\blog-thamnail03.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\cause-detail.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\cause-info.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\causes-01.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\causes-02.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\causes-03.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\causes-04.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\causes-05.jpg" />
+    <Content Remove="wwwroot\assets\img\causes\causes-06.jpg" />
+    <Content Remove="wwwroot\assets\img\content\bg1.jpg" />
+    <Content Remove="wwwroot\assets\img\content\bg2.jpg" />
+    <Content Remove="wwwroot\assets\img\content\bg3.jpg" />
+    <Content Remove="wwwroot\assets\img\content\dotted-map.png" />
+    <Content Remove="wwwroot\assets\img\content\intro.jpg" />
+    <Content Remove="wwwroot\assets\img\content\our-mission.jpg" />
+    <Content Remove="wwwroot\assets\img\content\our-vision.jpg" />
+    <Content Remove="wwwroot\assets\img\content\pricing-01.jpg" />
+    <Content Remove="wwwroot\assets\img\content\pricing-02.jpg" />
+    <Content Remove="wwwroot\assets\img\content\pricing-03.jpg" />
+    <Content Remove="wwwroot\assets\img\content\tab-content-01.jpg" />
+    <Content Remove="wwwroot\assets\img\content\tab-content-02.jpg" />
+    <Content Remove="wwwroot\assets\img\content\tab-content-03.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-01.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-02.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-03.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-04.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-05.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-06.jpg" />
+    <Content Remove="wwwroot\assets\img\event\event-detail.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\01.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\02.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\03.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\04.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\05.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\06.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\07.jpg" />
+    <Content Remove="wwwroot\assets\img\gallery\08.jpg" />
+    <Content Remove="wwwroot\assets\img\instagram\insta-01.jpg" />
+    <Content Remove="wwwroot\assets\img\instagram\insta-02.jpg" />
+    <Content Remove="wwwroot\assets\img\instagram\insta-03.jpg" />
+    <Content Remove="wwwroot\assets\img\instagram\insta-04.jpg" />
+    <Content Remove="wwwroot\assets\img\instagram\insta-05.jpg" />
+    <Content Remove="wwwroot\assets\img\instagram\insta-06.jpg" />
+    <Content Remove="wwwroot\assets\img\logos\apple-touch-icon-114x114.png" />
+    <Content Remove="wwwroot\assets\img\logos\apple-touch-icon-57x57.png" />
+    <Content Remove="wwwroot\assets\img\logos\apple-touch-icon-72x72.png" />
+    <Content Remove="wwwroot\assets\img\logos\favicon.png" />
+    <Content Remove="wwwroot\assets\img\logos\logo-footero.png" />
+    <Content Remove="wwwroot\assets\img\logos\logo-whitea.png" />
+    <Content Remove="wwwroot\assets\img\logos\logoo.png" />
+    <Content Remove="wwwroot\assets\img\testmonials\t-1.jpg" />
+    <Content Remove="wwwroot\assets\img\testmonials\t-2.jpg" />
+    <Content Remove="wwwroot\assets\img\testmonials\t-3.jpg" />
+    <Content Remove="wwwroot\assets\img\volunteers\1.jpg" />
+    <Content Remove="wwwroot\assets\img\volunteers\2.jpg" />
+    <Content Remove="wwwroot\assets\img\volunteers\3.jpg" />
+    <Content Remove="wwwroot\assets\img\volunteers\4.jpg" />
+    <Content Remove="wwwroot\assets\search\results.php" />
+    <Content Remove="wwwroot\assets\search\search.css" />
+    <Content Remove="wwwroot\assets\search\search.js" />
+    <Content Remove="wwwroot\assets\tmh\about.html" />
+    <Content Remove="wwwroot\assets\tmh\blog-default.html" />
+    <Content Remove="wwwroot\assets\tmh\blog-grid.html" />
+    <Content Remove="wwwroot\assets\tmh\blog-post.html" />
+    <Content Remove="wwwroot\assets\tmh\causes-detail.html" />
+    <Content Remove="wwwroot\assets\tmh\causes-grid.html" />
+    <Content Remove="wwwroot\assets\tmh\causes-list.html" />
+    <Content Remove="wwwroot\assets\tmh\coming-soon.html" />
+    <Content Remove="wwwroot\assets\tmh\contact.html" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\animate.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\bootstrap.min.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\clockpicker.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\datepicker.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\default.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\et-line.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\fontawesome-all.min.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\icomoon.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\magnific-popup.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\mailform.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\nav-menu.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\owl.carousel.min.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\owl.theme.default.min.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\prism.css" />
+    <Content Remove="wwwroot\assets\tmh\css\plugins\xzoom.css" />
+    <Content Remove="wwwroot\assets\tmh\css\rev_slider\layers.css" />
+    <Content Remove="wwwroot\assets\tmh\css\rev_slider\navigation.css" />
+    <Content Remove="wwwroot\assets\tmh\css\rev_slider\settings.css" />
+    <Content Remove="wwwroot\assets\tmh\css\styles.css" />
+    <Content Remove="wwwroot\assets\tmh\css\styles.css.map" />
+    <Content Remove="wwwroot\assets\tmh\css\styles.scss" />
+    <Content Remove="wwwroot\assets\tmh\donate-now.html" />
+    <Content Remove="wwwroot\assets\tmh\event-detail.html" />
+    <Content Remove="wwwroot\assets\tmh\event-details.html" />
+    <Content Remove="wwwroot\assets\tmh\event-grid.html" />
+    <Content Remove="wwwroot\assets\tmh\faq.html" />
+    <Content Remove="wwwroot\assets\tmh\fonts\et-line.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\et-line.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\et-line.woff" />
+    <Content Remove="wwwroot\assets\tmh\fonts\et-lined41d.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-brands-400.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-brands-400.svg" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-brands-400.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-brands-400.woff" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-brands-400.woff2" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-regular-400.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-regular-400.svg" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-regular-400.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-regular-400.woff" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-regular-400.woff2" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-solid-900.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-solid-900.svg" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-solid-900.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-solid-900.woff" />
+    <Content Remove="wwwroot\assets\tmh\fonts\fa-solid-900.woff2" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoon.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoon.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoon.woff" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoonb522.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoonb522.svg" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoonb522.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\icomoonb522.woff" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6-2.html" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6-3.html" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6-4.html" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6.eot" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6.html" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6.svg" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6.ttf" />
+    <Content Remove="wwwroot\assets\tmh\fonts\revicons\revicons90c6.woff" />
+    <Content Remove="wwwroot\assets\tmh\gallery.html" />
+    <Content Remove="wwwroot\assets\tmh\img\banner\page-title.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\banner\slide1.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\banner\slide2.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\banner\slide3.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\01.png" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\02.png" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\03.png" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-1.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-2.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-3.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-4.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-5.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-6.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-thamnail01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-thamnail02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\blog\blog-thamnail03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\cause-detail.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\cause-info.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\causes-01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\causes-02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\causes-03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\causes-04.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\causes-05.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\causes\causes-06.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\bg1.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\bg2.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\bg3.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\dotted-map.png" />
+    <Content Remove="wwwroot\assets\tmh\img\content\intro.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\our-mission.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\our-vision.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\pricing-01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\pricing-02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\pricing-03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\tab-content-01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\tab-content-02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\content\tab-content-03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-04.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-05.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-06.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\event\event-detail.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\04.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\05.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\06.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\07.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\gallery\08.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\instagram\insta-01.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\instagram\insta-02.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\instagram\insta-03.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\instagram\insta-04.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\instagram\insta-05.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\instagram\insta-06.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\apple-touch-icon-114x114.png" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\apple-touch-icon-57x57.png" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\apple-touch-icon-72x72.png" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\favicon.png" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\logo-footer.png" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\logo-white.png" />
+    <Content Remove="wwwroot\assets\tmh\img\logos\logo.png" />
+    <Content Remove="wwwroot\assets\tmh\img\testmonials\t-1.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\testmonials\t-2.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\testmonials\t-3.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\volunteers\1.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\volunteers\2.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\volunteers\3.jpg" />
+    <Content Remove="wwwroot\assets\tmh\img\volunteers\4.jpg" />
+    <Content Remove="wwwroot\assets\tmh\index.html" />
+    <Content Remove="wwwroot\assets\tmh\pricing.html" />
+    <Content Remove="wwwroot\assets\tmh\search.html" />
+    <Content Remove="wwwroot\assets\tmh\services.html" />
+    <Content Remove="wwwroot\assets\tmh\tables.html" />
+    <Content Remove="wwwroot\assets\tmh\tabs-and-accordions.html" />
+    <Content Remove="wwwroot\assets\tmh\volunteer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="assets\css\plugins.css" />
+    <None Remove="assets\css\plugins\animate.css" />
+    <None Remove="assets\css\plugins\bootstrap.min.css" />
+    <None Remove="assets\css\plugins\bootstrap.min.js.map" />
+    <None Remove="assets\css\plugins\clockpicker.css" />
+    <None Remove="assets\css\plugins\datepicker.css" />
+    <None Remove="assets\css\plugins\default.css" />
+    <None Remove="assets\css\plugins\et-line.css" />
+    <None Remove="assets\css\plugins\fontawesome-all.min.css" />
+    <None Remove="assets\css\plugins\icomoon.css" />
+    <None Remove="assets\css\plugins\magnific-popup.css" />
+    <None Remove="assets\css\plugins\mailform.css" />
+    <None Remove="assets\css\plugins\nav-menu.css" />
+    <None Remove="assets\css\plugins\owl.carousel.min.css" />
+    <None Remove="assets\css\plugins\owl.theme.default.min.css" />
+    <None Remove="assets\css\plugins\prism.css" />
+    <None Remove="assets\css\plugins\xzoom.css" />
+    <None Remove="assets\css\rev_slider\layers.css" />
+    <None Remove="assets\css\rev_slider\navigation.css" />
+    <None Remove="assets\css\rev_slider\settings.css" />
+    <None Remove="assets\css\style-bk.css" />
+    <None Remove="assets\css\style.min.css.old" />
+    <None Remove="assets\css\styles.scss" />
+    <None Remove="assets\img\github.png" />
+    <None Remove="assets\img\logos\logo-white.png" />
+    <None Remove="assets\img\logos\logo.png" />
+    <None Remove="assets\img\piranha.jpg" />
+    <None Remove="assets\img\seigaiha-overlay.png" />
+    <None Remove="assets\img\twitter.png" />
+    <None Remove="assets\js\countdownv2.6.1.js" />
+    <None Remove="assets\js\jquery-3.3.1.slim.min.js" />
+    <None Remove="assets\js\jquery-migrate-3.3.2.min.js" />
+    <None Remove="assets\js\popper.min.js" />
+    <None Remove="assets\js\stellar.es5.js" />
+    <None Remove="assets\js\stellar.es5.min.js" />
+    <None Remove="assets\js\stellar.js" />
+    <None Remove="assets\setup\css\style.css" />
+    <None Remove="assets\setup\img\ocean.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\animate.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\bootstrap.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\bootstrap.min.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\clockpicker.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\datepicker.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\default.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\et-line.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\fontawesome-all.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\icomoon.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\magnific-popup.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\mailform.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\nav-menu.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\owl.carousel.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\owl.theme.default.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\prism.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins\xzoom.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\rev_slider\layers.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\rev_slider\navigation.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\rev_slider\settings.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\style-bk.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\style.min.css.old" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\styles.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\styles.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\styles.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\banner\page-title.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\banner\slide1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\banner\slide2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\banner\slide3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\01.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\02.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\03.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-5.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-6.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-thamnail01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-thamnail02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\blog\blog-thamnail03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\cause-detail.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\cause-info.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\causes-01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\causes-02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\causes-03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\causes-04.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\causes-05.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\causes\causes-06.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\bg1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\bg2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\bg3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\dotted-map.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\intro.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\our-mission.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\our-vision.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\pricing-01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\pricing-02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\pricing-03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\tab-content-01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\tab-content-02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\content\tab-content-03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-04.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-05.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-06.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\event\event-detail.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\04.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\05.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\06.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\07.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\gallery\08.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\instagram\insta-01.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\instagram\insta-02.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\instagram\insta-03.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\instagram\insta-04.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\instagram\insta-05.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\instagram\insta-06.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\apple-touch-icon-114x114.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\apple-touch-icon-57x57.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\apple-touch-icon-72x72.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\favicon.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\logo-white.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\logo-whitea.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\logo.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\logoo.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\testmonials\t-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\testmonials\t-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\testmonials\t-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\volunteers\1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\volunteers\2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\volunteers\3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\volunteers\4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\style.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_archive.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_base.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_colors.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_hero.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_navigation.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_quotes.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_responsive.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_teasers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\_type.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\plugins.css" />
+    <Content Include="assets\css\plugins\animate.css" />
+    <Content Include="assets\css\plugins\bootstrap.min.css" />
+    <Content Include="assets\css\plugins\bootstrap.min.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\css\plugins\clockpicker.css" />
+    <Content Include="assets\css\plugins\datepicker.css" />
+    <Content Include="assets\css\plugins\default.css" />
+    <Content Include="assets\css\plugins\et-line.css" />
+    <Content Include="assets\css\plugins\fontawesome-all.min.css" />
+    <Content Include="assets\css\plugins\icomoon.css" />
+    <Content Include="assets\css\plugins\magnific-popup.css" />
+    <Content Include="assets\css\plugins\mailform.css" />
+    <Content Include="assets\css\plugins\nav-menu.css" />
+    <Content Include="assets\css\plugins\owl.carousel.min.css" />
+    <Content Include="assets\css\plugins\owl.theme.default.min.css" />
+    <Content Include="assets\css\plugins\prism.css" />
+    <Content Include="assets\css\plugins\xzoom.css" />
+    <Content Include="assets\css\rev_slider\layers.css" />
+    <Content Include="assets\css\rev_slider\navigation.css" />
+    <Content Include="assets\css\rev_slider\settings.css" />
+    <Content Include="assets\css\style-bk.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\css\style.min.css.old">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\css\styles.scss" />
+    <Content Include="assets\img\github.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\img\logos\logo-white.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\img\logos\logo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\img\piranha.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\img\seigaiha-overlay.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\img\twitter.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\countdownv2.6.1.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\jquery-3.3.1.slim.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\jquery-migrate-3.3.2.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\popper.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\stellar.es5.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\stellar.es5.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\js\stellar.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\setup\css\style.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="assets\setup\img\ocean.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\styles.css" />
+    <None Include="wwwroot\assets\css\styles.css.map" />
+    <None Include="wwwroot\assets\img\banner\page-title.jpg" />
+    <None Include="wwwroot\assets\img\banner\slide1.jpg" />
+    <None Include="wwwroot\assets\img\banner\slide2.jpg" />
+    <None Include="wwwroot\assets\img\banner\slide3.jpg" />
+    <None Include="wwwroot\assets\img\blog\01.png" />
+    <None Include="wwwroot\assets\img\blog\02.png" />
+    <None Include="wwwroot\assets\img\blog\03.png" />
+    <None Include="wwwroot\assets\img\blog\blog-1.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-2.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-3.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-4.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-5.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-6.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-thamnail01.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-thamnail02.jpg" />
+    <None Include="wwwroot\assets\img\blog\blog-thamnail03.jpg" />
+    <None Include="wwwroot\assets\img\causes\cause-detail.jpg" />
+    <None Include="wwwroot\assets\img\causes\cause-info.jpg" />
+    <None Include="wwwroot\assets\img\causes\causes-01.jpg" />
+    <None Include="wwwroot\assets\img\causes\causes-02.jpg" />
+    <None Include="wwwroot\assets\img\causes\causes-03.jpg" />
+    <None Include="wwwroot\assets\img\causes\causes-04.jpg" />
+    <None Include="wwwroot\assets\img\causes\causes-05.jpg" />
+    <None Include="wwwroot\assets\img\causes\causes-06.jpg" />
+    <None Include="wwwroot\assets\img\content\bg1.jpg" />
+    <None Include="wwwroot\assets\img\content\bg2.jpg" />
+    <None Include="wwwroot\assets\img\content\bg3.jpg" />
+    <None Include="wwwroot\assets\img\content\dotted-map.png" />
+    <None Include="wwwroot\assets\img\content\intro.jpg" />
+    <None Include="wwwroot\assets\img\content\our-mission.jpg" />
+    <None Include="wwwroot\assets\img\content\our-vision.jpg" />
+    <None Include="wwwroot\assets\img\content\pricing-01.jpg" />
+    <None Include="wwwroot\assets\img\content\pricing-02.jpg" />
+    <None Include="wwwroot\assets\img\content\pricing-03.jpg" />
+    <None Include="wwwroot\assets\img\content\tab-content-01.jpg" />
+    <None Include="wwwroot\assets\img\content\tab-content-02.jpg" />
+    <None Include="wwwroot\assets\img\content\tab-content-03.jpg" />
+    <None Include="wwwroot\assets\img\event\event-01.jpg" />
+    <None Include="wwwroot\assets\img\event\event-02.jpg" />
+    <None Include="wwwroot\assets\img\event\event-03.jpg" />
+    <None Include="wwwroot\assets\img\event\event-04.jpg" />
+    <None Include="wwwroot\assets\img\event\event-05.jpg" />
+    <None Include="wwwroot\assets\img\event\event-06.jpg" />
+    <None Include="wwwroot\assets\img\event\event-detail.jpg" />
+    <None Include="wwwroot\assets\img\gallery\01.jpg" />
+    <None Include="wwwroot\assets\img\gallery\02.jpg" />
+    <None Include="wwwroot\assets\img\gallery\03.jpg" />
+    <None Include="wwwroot\assets\img\gallery\04.jpg" />
+    <None Include="wwwroot\assets\img\gallery\05.jpg" />
+    <None Include="wwwroot\assets\img\gallery\06.jpg" />
+    <None Include="wwwroot\assets\img\gallery\07.jpg" />
+    <None Include="wwwroot\assets\img\gallery\08.jpg" />
+    <None Include="wwwroot\assets\img\instagram\insta-01.jpg" />
+    <None Include="wwwroot\assets\img\instagram\insta-02.jpg" />
+    <None Include="wwwroot\assets\img\instagram\insta-03.jpg" />
+    <None Include="wwwroot\assets\img\instagram\insta-04.jpg" />
+    <None Include="wwwroot\assets\img\instagram\insta-05.jpg" />
+    <None Include="wwwroot\assets\img\instagram\insta-06.jpg" />
+    <None Include="wwwroot\assets\img\logos\apple-touch-icon-114x114.png" />
+    <None Include="wwwroot\assets\img\logos\apple-touch-icon-57x57.png" />
+    <None Include="wwwroot\assets\img\logos\apple-touch-icon-72x72.png" />
+    <None Include="wwwroot\assets\img\logos\favicon.png" />
+    <None Include="wwwroot\assets\img\logos\logo-footero.png" />
+    <None Include="wwwroot\assets\img\logos\logo-whitea.png" />
+    <None Include="wwwroot\assets\img\logos\logoo.png" />
+    <None Include="wwwroot\assets\img\testmonials\t-1.jpg" />
+    <None Include="wwwroot\assets\img\testmonials\t-2.jpg" />
+    <None Include="wwwroot\assets\img\testmonials\t-3.jpg" />
+    <None Include="wwwroot\assets\img\volunteers\1.jpg" />
+    <None Include="wwwroot\assets\img\volunteers\2.jpg" />
+    <None Include="wwwroot\assets\img\volunteers\3.jpg" />
+    <None Include="wwwroot\assets\img\volunteers\4.jpg" />
+    <None Include="wwwroot\assets\search\results.php" />
+    <None Include="wwwroot\assets\search\search.css" />
+    <None Include="wwwroot\assets\search\search.js" />
+    <None Include="wwwroot\assets\tmh\about.html" />
+    <None Include="wwwroot\assets\tmh\blog-default.html" />
+    <None Include="wwwroot\assets\tmh\blog-grid.html" />
+    <None Include="wwwroot\assets\tmh\blog-post.html" />
+    <None Include="wwwroot\assets\tmh\causes-detail.html" />
+    <None Include="wwwroot\assets\tmh\causes-grid.html" />
+    <None Include="wwwroot\assets\tmh\causes-list.html" />
+    <None Include="wwwroot\assets\tmh\coming-soon.html" />
+    <None Include="wwwroot\assets\tmh\contact.html" />
+    <None Include="wwwroot\assets\tmh\css\plugins.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\animate.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\bootstrap.min.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\clockpicker.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\datepicker.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\default.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\et-line.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\fontawesome-all.min.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\icomoon.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\magnific-popup.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\mailform.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\nav-menu.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\owl.carousel.min.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\owl.theme.default.min.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\prism.css" />
+    <None Include="wwwroot\assets\tmh\css\plugins\xzoom.css" />
+    <None Include="wwwroot\assets\tmh\css\rev_slider\layers.css" />
+    <None Include="wwwroot\assets\tmh\css\rev_slider\navigation.css" />
+    <None Include="wwwroot\assets\tmh\css\rev_slider\settings.css" />
+    <None Include="wwwroot\assets\tmh\css\styles.css" />
+    <None Include="wwwroot\assets\tmh\css\styles.css.map" />
+    <None Include="wwwroot\assets\tmh\css\styles.scss" />
+    <None Include="wwwroot\assets\tmh\donate-now.html" />
+    <None Include="wwwroot\assets\tmh\event-detail.html" />
+    <None Include="wwwroot\assets\tmh\event-details.html" />
+    <None Include="wwwroot\assets\tmh\event-grid.html" />
+    <None Include="wwwroot\assets\tmh\faq.html" />
+    <None Include="wwwroot\assets\tmh\fonts\et-line.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\et-line.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\et-line.woff" />
+    <None Include="wwwroot\assets\tmh\fonts\et-lined41d.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-brands-400.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-brands-400.woff" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-regular-400.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-regular-400.svg" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-regular-400.woff" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-solid-900.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-solid-900.woff" />
+    <None Include="wwwroot\assets\tmh\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoon.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoon.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoon.woff" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoonb522.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoonb522.svg" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoonb522.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\icomoonb522.woff" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6-2.html" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6-3.html" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6-4.html" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6.eot" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6.html" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6.svg" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6.ttf" />
+    <None Include="wwwroot\assets\tmh\fonts\revicons\revicons90c6.woff" />
+    <None Include="wwwroot\assets\tmh\gallery.html" />
+    <None Include="wwwroot\assets\tmh\img\banner\page-title.jpg" />
+    <None Include="wwwroot\assets\tmh\img\banner\slide1.jpg" />
+    <None Include="wwwroot\assets\tmh\img\banner\slide2.jpg" />
+    <None Include="wwwroot\assets\tmh\img\banner\slide3.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\01.png" />
+    <None Include="wwwroot\assets\tmh\img\blog\02.png" />
+    <None Include="wwwroot\assets\tmh\img\blog\03.png" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-1.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-2.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-3.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-4.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-5.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-6.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-thamnail01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-thamnail02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\blog\blog-thamnail03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\cause-detail.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\cause-info.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\causes-01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\causes-02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\causes-03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\causes-04.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\causes-05.jpg" />
+    <None Include="wwwroot\assets\tmh\img\causes\causes-06.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\bg1.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\bg2.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\bg3.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\dotted-map.png" />
+    <None Include="wwwroot\assets\tmh\img\content\intro.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\our-mission.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\our-vision.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\pricing-01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\pricing-02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\pricing-03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\tab-content-01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\tab-content-02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\content\tab-content-03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-04.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-05.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-06.jpg" />
+    <None Include="wwwroot\assets\tmh\img\event\event-detail.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\04.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\05.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\06.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\07.jpg" />
+    <None Include="wwwroot\assets\tmh\img\gallery\08.jpg" />
+    <None Include="wwwroot\assets\tmh\img\instagram\insta-01.jpg" />
+    <None Include="wwwroot\assets\tmh\img\instagram\insta-02.jpg" />
+    <None Include="wwwroot\assets\tmh\img\instagram\insta-03.jpg" />
+    <None Include="wwwroot\assets\tmh\img\instagram\insta-04.jpg" />
+    <None Include="wwwroot\assets\tmh\img\instagram\insta-05.jpg" />
+    <None Include="wwwroot\assets\tmh\img\instagram\insta-06.jpg" />
+    <None Include="wwwroot\assets\tmh\img\logos\apple-touch-icon-114x114.png" />
+    <None Include="wwwroot\assets\tmh\img\logos\apple-touch-icon-57x57.png" />
+    <None Include="wwwroot\assets\tmh\img\logos\apple-touch-icon-72x72.png" />
+    <None Include="wwwroot\assets\tmh\img\logos\favicon.png" />
+    <None Include="wwwroot\assets\tmh\img\logos\logo-footer.png" />
+    <None Include="wwwroot\assets\tmh\img\logos\logo-white.png" />
+    <None Include="wwwroot\assets\tmh\img\logos\logo.png" />
+    <None Include="wwwroot\assets\tmh\img\testmonials\t-1.jpg" />
+    <None Include="wwwroot\assets\tmh\img\testmonials\t-2.jpg" />
+    <None Include="wwwroot\assets\tmh\img\testmonials\t-3.jpg" />
+    <None Include="wwwroot\assets\tmh\img\volunteers\1.jpg" />
+    <None Include="wwwroot\assets\tmh\img\volunteers\2.jpg" />
+    <None Include="wwwroot\assets\tmh\img\volunteers\3.jpg" />
+    <None Include="wwwroot\assets\tmh\img\volunteers\4.jpg" />
+    <None Include="wwwroot\assets\tmh\index.html" />
+    <None Include="wwwroot\assets\tmh\pricing.html" />
+    <None Include="wwwroot\assets\tmh\search.html" />
+    <None Include="wwwroot\assets\tmh\services.html" />
+    <None Include="wwwroot\assets\tmh\tables.html" />
+    <None Include="wwwroot\assets\tmh\tabs-and-accordions.html" />
+    <None Include="wwwroot\assets\tmh\volunteer.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +719,67 @@
     <ProjectReference Include="..\..\core\Piranha.Manager.TinyMCE\Piranha.Manager.TinyMCE.csproj" />
     <ProjectReference Include="..\..\core\Piranha.WebApi\Piranha.WebApi.csproj" />
     <ProjectReference Include="..\..\data\Piranha.Data.EF.SQLite\Piranha.Data.EF.SQLite.csproj" />
+    <ProjectReference Include="..\..\data\Piranha.Data.EF.SQLServer\Piranha.Data.EF.SQLServer.csproj" />
     <ProjectReference Include="..\..\identity\Piranha.AspNetCore.Identity.SQLite\Piranha.AspNetCore.Identity.SQLite.csproj" />
+    <ProjectReference Include="..\..\identity\Piranha.AspNetCore.Identity.SQLServer\Piranha.AspNetCore.Identity.SQLServer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\assets\img\github.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\img\piranha.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\img\seigaiha-overlay.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\img\twitter.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\countdownv2.6.1.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\jquery-3.3.1.slim.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\jquery-migrate-3.3.2.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\popper.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\stellar.es5.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\stellar.es5.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\stellar.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\setup\css\style.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\setup\img\ocean.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 </Project>

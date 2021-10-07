@@ -1,0 +1,48 @@
+@using MvcWeb.Models
+@model ResourceCategoryPage
+@{
+  ViewBag.Title = Model.Title;
+}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-10">
+      <h1 class="display-4">
+        @Model.ResourceCategoryDetail.CategoryName
+      </h1>
+      <p class="lead">@Html.Raw(@Model.ResourceCategoryDetail.Description)</p>
+    </div>
+  </div>
+  <div class="row">
+  @if (Model.ResourceList.Count == 0)
+  {
+    <div class="col-sm-10">
+      @*There are no items in this resource category!*@
+    </div>
+  }
+  else
+  {
+    @foreach(ResourceListRegion p in Model.ResourceList)
+    {
+    <div class="col-sm-4">
+      <div class="card border-dark" style="width: 18rem;">
+        <div class="card-header">
+          Number of Items: @p.SubResourceValue2.Value
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-info">
+            <small class="text-muted">@p.ResourceListID.Value</small>
+            @Html.Raw(@p.SubResourceTitle.Value)
+          </h5>
+            <p class="card-text text-info">
+                @p.SubResourceDescription
+            </p>
+          <p class="card-text text-info">
+            Results: @p.SubResourceValue2.Value
+          </p>
+        </div>
+      </div>
+    </div>
+    }
+  }
+  </div>
+</div>

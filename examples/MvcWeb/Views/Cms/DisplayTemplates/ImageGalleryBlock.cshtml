@@ -4,22 +4,60 @@
     var unique = "gallery-" + Guid.NewGuid().ToString();
 }
 
-<div id="@unique" class="carousel slide gallery-block" data-ride="carousel">
+<style>
+
+        /*
+    Removes white gap between slides - chagnge to base color of slide images
+    */
+        .carousel {
+            background: #f6f6f6;
+        }
+
+        /*
+    Forces image to be 100% width and not max width of 100%
+    */
+        .carousel-item .img-fluid {
+            width: 100%;
+        }
+
+        /*
+    anchors are inline so you need ot make them block to go full width
+    */
+        .carousel-item a {
+            display: block;
+            width: 100%;
+        }
+</style>
+<div id="@unique" class="carousel slide gallery-block" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
         @for (var n = 0; n < Model.Items.Count; n++)
         {
             <li data-target="#@unique" data-slide-to="@n" class="@(n == 0 ? "active" : "")"></li>
         }
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner" role="listbox">
         @foreach (var item in Model.Items)
         {
-            <div class="carousel-item @(item == Model.Items.First() ? "active" : "")">
-                @{
-                    var image = ((ImageBlock) item).Body.Media;
-                }
-                <img src="@Url.Content(WebApp.Media.ResizeImage(image, 890, 482))" class="d-block w-100" alt="@image.AltText" title="@image.Title">
+        <div class="carousel-item @(item == Model.Items.First() ? " active" : "" )">
+            @{
+                var image = ((ImageBlock)item).Body.Media;
+            }
+            <picture>
+                <source srcset="@Url.Content(WebApp.Media.ResizeImage(image, 2000, 1125))" class="d-block w-100 rounded" media="(min-width: 1400px)">
+                <source srcset="@Url.Content(WebApp.Media.ResizeImage(image, 1400, 780))" class="d-block w-100 rounded" media="(min-width: 769px)">
+                <source srcset="@Url.Content(WebApp.Media.ResizeImage(image, 800, 450))" class="d-block w-100 rounded" media="(min-width: 577px)">
+                <img srcset="@Url.Content(WebApp.Media.ResizeImage(image, 600, 340))" alt="@image.AltText" title="@image.Title" class="d-block img-fluid">
+            </picture>
+            <div class="carousel-caption"  style="background: rgba(0, 0, 0, 0.35);">
+                <div>
+                    <div style="margin-top:10px;">&nbsp;</div>
+                    <h4 class="text-theme-color animated fadeInRight d-none d-md-block">@image.Title</h4>
+                    <p class="text-whitea">@image.Description</p>
+                    @*<span class="btn btn-sm btn-secondary">Learn How</span>*@
+                </div>
             </div>
+        </div>
+       
         }
     </div>
     <a class="carousel-control-prev" href="#@unique" role="button" data-slide="prev">

@@ -49,6 +49,7 @@ namespace RazorWeb.Pages
                         .GetByIdAsync<PostInfo>(latest.First());
                 }
             }
+
             return result;
         }
     }

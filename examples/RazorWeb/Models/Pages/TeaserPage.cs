@@ -31,10 +31,10 @@ namespace RazorWeb.Models
         public Regions.Hero Hero { get; set; }
 
         [Region(Title = "All fields")]
-        [RegionDescription("Vestibulum id ligula porta felis euismod <strong>semper</strong>. Curabitur blandit tempus porttitor.")]
+        [RegionDescription("All Fields Region <strong>Region All Fields</strong>. Regions.AllFields")]
         public Regions.AllFields AllFields { get; set; }
 
-        [Region(Title = "Images", ListTitle = "Title", ListPlaceholder = "New image", Icon = "fas fa-images", ListExpand = false)]
+        [Region(Title = "Images", ListTitle = "Title", ListPlaceholder = "New image", Icon = "fas fa-images", ListExpand = false )]
         public IList<ImageField> Images { get; set; }
 
         /// <summary>

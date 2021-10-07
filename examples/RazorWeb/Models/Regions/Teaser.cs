@@ -32,6 +32,11 @@ namespace RazorWeb.Models.Regions
         public StringField SubTitle { get; set; }
 
         /// <summary>
+        /// Gets/sets the tag.
+        /// </summary>
+        [Field(Options = FieldOption.HalfWidth)]
+        public StringField Tag { get; set; }
+        /// <summary>
         /// Gets/sets the optional teaser image.
         /// </summary>
         [Field]

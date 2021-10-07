@@ -9,7 +9,7 @@ using Piranha.Models;
 /// <summary>
 /// Example data item for a DataSelectListField that can be used
 /// to select pages. This has to be it's own class so that the static
-/// metods GetById() and GetList() can be defined.
+/// methods GetById() and GetList() can be defined.
 /// </summary>
 public class PageItem
 {

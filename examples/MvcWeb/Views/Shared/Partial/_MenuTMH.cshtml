@@ -1,0 +1,137 @@
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService Auth
+
+    @*<div class="whitespacea"></div>*@
+<style type="text/css">
+    .whitespacea {
+        width: 100%;
+        height: 20px;
+        top: 0px;
+        left: 0px;
+        background: #3e3e3e;
+        position: fixed;
+    }
+</style>
+    <div class="navbar-default border-bottom border-color-light-white">
+        <!-- Start Top Search -->
+        <div class="top-search bg-theme">
+            <div class="container-fluid">
+                <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+                    <div class="input-group">
+                        <span class="input-group-addon cursor-pointer">
+                            <button class="search-form_submit fas fa-search font-size18 text-white" type="submit"></button>
+                        </span>
+                        <input type="text" class="search-form_input form-control" name="s" autocomplete="off" placeholder="Type & hit enter...">
+                        <span class="input-group-addon close-search"><i class="fas fa-times font-size18 line-height-28 margin-5px-top"></i></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Top Search -->
+
+        <div class="container-fluid">
+            <div class="row align-items-center px-5">
+                <div class="col-12 col-lg-12">
+                    <div class="menu_area alt-font">
+                        <nav class="navbar navbar-expand-lg navbar-light no-padding">
+
+                            <div class="navbar-header navbar-header-custom">
+                                <!-- Start Logo -->
+                                <a href="index.html" class="navbar-brand logowhite"><img id="logo" src="~/assets/img/logos/logo-white.png" alt="logo"></a>
+                                <!-- End Logo -->
+                            </div>
+
+                            <div class="navbar-toggler"></div>
+
+                            <!-- start menu Area -->
+                            <ul class="navbar-nav ml-auto" id="nav" style="display: none;">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li>
+                                    <a href="javascript:void(0)">Causes</a>
+                                    <ul>
+                                        <li><a href="causes-list.html">Causes List</a></li>
+                                        <li><a href="causes-grid.html">Causes Grid</a></li>
+                                        <li><a href="causes-detail.html">Causes Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Pages</a>
+                                    <ul>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="volunteer.html">Volunteer</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="donate-now.html">Donate Now</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="pricing.html">Pricing</a></li>
+                                        <li>
+                                            <a href="javascript:void(0)">Others</a>
+                                            <ul>
+                                                <li><a href="tables.html">Tables</a></li>
+                                                <li><a href="tabs-and-accordions.html">Tabs And Accordions</a></li>
+                                                <li><a href="coming-soon.html">Comingsoon</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Events</a>
+                                    <ul>
+                                        <li><a href="event-grid.html">Event Grid</a></li>
+                                        <li><a href="event-details.html">Event Details</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Blog</a>
+                                    <ul>
+                                        <li><a href="blog-default.html">Blog Default</a></li>
+                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-post.html">Blog Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                            <!-- end menu Area -->
+                            <!-- Start Atribute Navigation -->
+                            <div class="attr-nav sm-no-margin sm-margin-65px-right xs-margin-60px-right">
+                                <ul>
+                                    <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- End Atribute Navigation -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @*<div>
+
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-brand">
+                <a href="https://twitter.com/piranhacms" target="blank"><img src="~/assets/img/twitter.png"></a>
+                <a href="https://github.com/piranhacms/piranha.core" target="blank"><img src="~/assets/img/github.png"></a>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mobileNavbar" aria-controls="mobileNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">&#9776;</span>
+            </button>
+            <div class="navbar-collapse collapse" id="mobileNavbar">
+                <ul class="justify-content-center navbar-nav mr-auto">
+
+                    @foreach (var item in await WebApp.Site.Sitemap.ForUserAsync(User, Auth))
+                    {
+                        if (!item.IsHidden)
+                        {
+                            <li class="nav-item @(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? "active" : "")">
+                                <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>*@

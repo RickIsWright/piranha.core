@@ -2,5 +2,13 @@
   {
     "outputFile": "wwwroot/assets/css/style.css",
     "inputFile": "assets/scss/style.scss"
+  },
+  {
+    "outputFile": "wwwroot/assets/js/stellar.es5.js",
+    "inputFile": "wwwroot/assets/js/stellar.js"
+  },
+  {
+    "outputFile": "wwwroot/assets/css/styles.css",
+    "inputFile": "wwwroot/assets/css/styles.scss"
   }
 ]

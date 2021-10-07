@@ -5,9 +5,10 @@
 
 @Html.DisplayFor(m => m.Hero)
 
-@if (Model.LatestPost != null)
-{
-    <div class="container latest-post">
+<div class="container" style="margin-top:20px;"><br /><br /></div>
+@*@if (Model.LatestPost != null)*@
+@*{*@
+    @*<div class="container latest-post">
         <div class="row">
             <div class="col text-center">
                 Latest news:
@@ -16,14 +17,14 @@
                 <a href="@Model.LatestPost.Permalink">@Model.LatestPost.Title</a>
             </div>
         </div>
-    </div>
-}
+    </div>*@
+@*}*@
 
 <partial name="Partial/Teasers" for="Teasers" />
 
 <div class="container body-container">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-xs-12">
+        <div class="col-md-12 col-xs-12 col-xl-12 col-lg-12">
             @Html.DisplayFor(m => m.Blocks)
         </div>
     </div>

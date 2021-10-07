@@ -10,9 +10,18 @@
 
 @Html.DisplayFor(m => m.Data.Hero)
 
+
+<div class="container-fluid full-screen">
+    <div class="row slider-fade">
+        <div class="owl-carousel owl-theme width-100">
+            <partial name="Partial/TeasersTMH" for="Data.Teasers" />
+        </div>
+    </div>
+</div>
+
 @if (Model.Data.LatestPost != null)
 {
-    <div class="container latest-post">
+    <div class="container bg-warning pt-3 pb-3">
         <div class="row">
             <div class="col text-center">
                 Latest news:
@@ -24,11 +33,9 @@
     </div>
 }
 
-<partial name="Partial/Teasers" for="Data.Teasers" />
-
-<div class="container body-container">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-xs-12">
+        <div class="col-md-12 col-xs-12">
             @Html.DisplayFor(m => m.Data.Blocks)
         </div>
     </div>

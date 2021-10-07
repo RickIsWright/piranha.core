@@ -1,0 +1,46 @@
+@using MvcWeb.Models
+@model VideoCategoryPage
+@{
+  ViewBag.Title = Model.Title;
+}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-10">
+      <h1 class="display-4">
+        @Model.CategoryDetail.VideoTitle
+      </h1>
+      <p class="lead">@Html.Raw(@Model.CategoryDetail.Description)</p>
+    </div>
+  </div>
+  <div class="row">
+  @if (Model.Videos.Count == 0)
+  {
+    <div class="col-sm-10">
+      @*There are no items in this resource category!*@
+    </div>
+  }
+  else
+  {
+    @foreach(VideoProductRegion p in Model.Videos)
+    {
+    <div class="col-sm-4">
+      <div class="card border-dark" style="width: 18rem;">
+        <div class="card-header">
+          Title: @p.VideoProductTitle
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-info">
+            <small class="text-muted">@p.VideoProductID.Value</small>
+           Views: @Html.Raw(@p.VideoProductViews.Value)
+          </h5>
+            <p class="card-text text-info">
+               Rating:  @p.VideoRating
+            </p>
+          
+        </div>
+      </div>
+    </div>
+    }
+  }
+  </div>
+</div>

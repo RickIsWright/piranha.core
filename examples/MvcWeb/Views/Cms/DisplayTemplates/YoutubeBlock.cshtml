@@ -1,0 +1,10 @@
+﻿
+<div class="video-container">
+    @model Piranha.Extend.Blocks.YoutubeBlock
+    @*<iframe
+        width = "560" height = "315"  src=*@
+    @Html.Raw(System.Net.WebUtility.HtmlDecode(Model.YouTubeVideoUrl))
+
+    @*frameborder = "0" allow = "autoplay; encrypted-media" allowfullscreen>    </iframe >*@
+</div>
+

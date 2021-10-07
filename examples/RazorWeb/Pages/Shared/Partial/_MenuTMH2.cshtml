@@ -1,0 +1,85 @@
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService Auth
+
+<!-- Start Menu Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light no-padding">
+    <div class="navbar-header navbar-header-custom">
+        <!-- Start Logo -->
+        <a href="index.html" class="navbar-brand logowhite"><img id="logo" src="img/logos/logo-white.png" alt="logo"></a>
+        <!-- End Logo -->
+    </div>
+    <div class="navbar-toggler"></div>
+    <!-- start menu Area -->
+    <ul class="navbar-nav ml-auto" id="nav" style="display: none;">
+
+        @foreach (var item in await WebApp.Site.Sitemap.ForUserAsync(User, Auth))
+        {
+            if (!item.IsHidden)
+            {
+                <li class="nav-item @(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? "active" : "")">
+                    <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>
+                </li>
+            }
+        }
+               
+        
+        <li>
+            <a href="javascript:void(0)">Pages</a>
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="donate-now.html">Donate Now</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li>
+                    <a href="javascript:void(0)">Others</a>
+                    <ul>
+                        <li><a href="tables.html">Tables</a></li>
+                        <li><a href="tabs-and-accordions.html">Tabs And Accordions</a></li>
+                        <li><a href="coming-soon.html">Comingsoon</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>        
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <!-- end menu Area -->
+    <!-- Start Atribute Navigation -->
+    <div class="attr-nav sm-no-margin sm-margin-65px-right xs-margin-60px-right">
+        <ul>
+            <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+        </ul>
+    </div>
+    <!-- End Atribute Navigation -->
+</nav>
+
+
+
+
+@*<div>
+
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-brand">
+                <a href="https://twitter.com/piranhacms" target="blank"><img src="~/assets/img/twitter.png"></a>
+                <a href="https://github.com/piranhacms/piranha.core" target="blank"><img src="~/assets/img/github.png"></a>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mobileNavbar" aria-controls="mobileNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">&#9776;</span>
+            </button>
+            <div class="navbar-collapse collapse" id="mobileNavbar">
+                <ul class="justify-content-center navbar-nav mr-auto">
+
+                    @f oreach (var item in await WebApp.Site.Sitemap.ForUserAsync(User, Auth))
+                    {
+                        if (!item.IsHidden)
+                        {
+                            <li class="nav-item @(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? "active" : "")">
+                                <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>*@

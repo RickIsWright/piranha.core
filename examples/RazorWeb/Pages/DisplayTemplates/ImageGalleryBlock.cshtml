@@ -3,7 +3,30 @@
 @{
     var unique = "gallery-" + Guid.NewGuid().ToString();
 }
+<style type="text/css">
+    /*
+        https://bootstrapcreative.com/pattern/full-width-carousel-responsive-images/
+Removes white gap between slides - chagnge to base color of slide images
+*/
+    .carousel {
+        background: #007aeb;
+    }
 
+    /*
+Forces image to be 100% width and not max width of 100%
+*/
+    .carousel-item .img-fluid {
+        width: 100%;
+    }
+
+    /* 
+anchors are inline so you need ot make them block to go full width
+*/
+    .carousel-item a {
+        display: block;
+        width: 100%;
+    }
+</style>
 <div id="@unique" class="carousel slide gallery-block" data-ride="carousel">
     <ol class="carousel-indicators">
         @for (var n = 0; n < Model.Items.Count; n++)
@@ -14,12 +37,13 @@
     <div class="carousel-inner">
         @foreach (var item in Model.Items)
         {
-            <div class="carousel-item @(item == Model.Items.First() ? "active" : "")">
-                @{
-                    var image = ((ImageBlock) item).Body.Media;
-                }
-                <img src="@Url.Content(WebApp.Media.ResizeImage(image, 890, 482))" class="d-block w-100" alt="@image.AltText" title="@image.Title">
-            </div>
+        <div class="carousel-item @(item == Model.Items.First() ? "active" : "")">
+            @{
+                var image = ((ImageBlock)item).Body.Media;
+            }
+            <img src="@Url.Content(WebApp.Media.ResizeImage(image,1900))" class="d-block w-100" alt="@image.AltText" title="@image.Title">
+            @*<img src="@Url.Content(WebApp.Media.ResizeImage(image, 890, 482))" class="d-block w-100" alt="@image.AltText" title="@image.Title">*@
+        </div>
         }
     </div>
     <a class="carousel-control-prev" href="#@unique" role="button" data-slide="prev">

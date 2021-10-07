@@ -1,0 +1,44 @@
+@model RazorWeb.Models.Regions.HeroB
+@using Piranha.Extend.Blocks
+
+
+
+
+@*<div>
+    <partial name="~/" />
+</div>*@
+
+<div class="container hero">
+    <div class="row">
+        <div class="col text-center">
+            <h2>@Model.Subtitle</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-8 col-xs-12 text-center">
+            @if (Model.PrimaryImage.HasValue)
+            {
+                <img src="@Url.Content(Model.PrimaryImage)">
+            }
+            @Html.Raw(Model.Ingress)
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-sm-8 col-xs-12 text-center">
+
+            @foreach (var item in Model.Images)
+            {
+                <div class="carousel-item @(item == Model.Images.First() ? "active" : "")">
+                    @{
+                        var image = (item.Media);
+                    }
+                    <img src="@Url.Content(WebApp.Media.ResizeImage(image, 890, 482))" class="d-block w-100" alt="@image.AltText" title="@image.Title">
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>

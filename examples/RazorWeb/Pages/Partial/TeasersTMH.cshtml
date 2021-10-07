@@ -1,0 +1,40 @@
+@model IList<RazorWeb.Models.Regions.Teaser>
+@{
+}
+
+@if (Model.Count > 0)
+{
+    @foreach (var teaser in Model)
+    {
+        
+        <div class="text-left item bg-img" data-overlay-dark="6" data-background="@(teaser.Image.HasValue?@Url.Content(WebApp.Media.ResizeImage(teaser.Image, 1900)):"")">
+            <div class="absolute-middle-center caption">
+                <div class="container">
+                    <div class="overflow-hidden width-75 xs-width-85">
+                        <p class="margin-10px-bottom">@teaser.Title.Value</p>
+                        <h1 class="text-white margin-30px-bottom">@Html.Raw(teaser.Body)</h1>
+                        <a href="javascript:void(0);" class="butn theme">
+                            <span class="alt-font">Learn More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    } // eo for
+
+    @*@foreach (var teaser in Model)
+    {
+        <div class="col-md">
+            <div class="teaser-body">
+                <h3>@teaser.Title.Value</h3>
+                @if (teaser.Image.HasValue)
+                {
+                    <img src="@Url.Content(WebApp.Media.ResizeImage(teaser.Image, 132))">
+                }
+                @Html.Raw(teaser.Body)
+            </div>
+        </div>
+    }*@
+
+}
