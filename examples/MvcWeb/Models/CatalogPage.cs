@@ -7,7 +7,7 @@ using Piranha.Extend.Fields;
 
 namespace MvcWeb.Models
 {
-    [PageType(Title = "Catalog page", UseBlocks = false)]
+    [PageType(Title = "Catalog Page", UseBlocks = false)]
     [ContentTypeRoute(Title = "Default", Route = "/catalog")]
     public class CatalogPage : Page<CatalogPage>
     {

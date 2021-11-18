@@ -1,110 +1,191 @@
+﻿@using Piranha.Models;
 @inject Microsoft.AspNetCore.Authorization.IAuthorizationService Auth
-<!-- Start Menu Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light no-padding">
-    <div class="navbar-header navbar-header-custom">
-        <!-- Start Logo -->
-        <a href="index.html" class="navbar-brand logowhite"><img id="logo" src="~/assets/img/logos/logo-white.png" alt="logo"></a>
-        <!-- End Logo -->
+
+@{
+    var sitemap = await WebApp.Api.Sites.GetSitemapAsync(); // Site.Sitemap; //  //.ForUserAsync(User, Auth);
+    var partial = sitemap.GetPartial(WebApp.CurrentPage.Id);
+    var currentPermalink = WebApp.CurrentPage.Permalink;
+    var menuItems = await WebApp.Site.Sitemap.ForUserAsync(User, Auth);
+    System.Text.StringBuilder sbr = new System.Text.StringBuilder();
+    GenerateHTML(sbr, menuItems, 3);
+    var newHtml = sbr.ToString();
+    int strLength = newHtml.Length - 9;
+    var menu = newHtml.Substring(4, strLength);
+    newHtml = "";
+
+    var s = "";
+    s = "finished";
+}
+
+<!-- start header section -->
+<header class="header-style1 menu_area-light">
+
+    <div class="navbar-default border-bottom border-color-light-white">
+
+        <!-- Start Top Search -->
+        <div class="top-search bg-theme">
+            <div class="container">
+                <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+                    <div class="input-group">
+                        <span class="input-group-addon cursor-pointer">
+                            <button class="search-form_submit fas fa-search font-size18 text-white" type="submit"></button>
+                        </span>
+                        <input type="text" class="search-form_input form-control" name="s" autocomplete="off" placeholder="Type & hit enter...">
+                        <span class="input-group-addon close-search"><i class="fas fa-times font-size18 line-height-28 margin-5px-top"></i></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Top Search -->
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-12">
+                    <div class="menu_area alt-font">
+                        <nav class="navbar navbar-expand-lg navbar-light no-padding">
+
+                            <div class="navbar-header navbar-header-custom">
+                                <!-- Start Logo -->
+                                <a href="~/" class="navbar-brand logowhite"><img id="logo" src="~/assets/img/logos/logo-white.png" alt="logo"></a>
+                                <!-- End Logo -->
+                            </div>
+
+                            <div class="navbar-toggler"></div>
+
+                            <!-- start menu Area -->
+                            <ul class="navbar-nav ml-auto" id="nav" style="display: none;">
+                                @Html.Raw(menu)
+                            </ul>
+                            <!-- end menu Area -->
+                            <!-- Start Atribute Navigation -->
+                            <div class="attr-nav sm-no-margin sm-margin-65px-right xs-margin-60px-right">
+                                <ul>
+                                    <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- End Atribute Navigation -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="navbar-toggler"></div>
-    <!-- start menu Area -->
-    <ul class="navbar-nav ml-auto" id="nav" style="display: none;">
+</header>
+<!-- end header section -->
 
-        @foreach (var item in await WebApp.Site.Sitemap.ForUserAsync(User, Auth))
+
+
+@functions
+{
+    // iterate thru top level menus
+    
+
+    // pass in the list and an item from the menu's child items
+   
+
+
+    /// <summary>
+    /// Adds another level of HTML list and list items to a string https://stackoverflow.com/questions/1396778/recursive-menu-builder-with-c-sharp
+    /// </summary>
+    /// <param name="str">The string to add</param>
+    /// <param name="liStrings">The list of strings at this level to add</param>
+    /// <param name="iTabIndex">The current number of tabs indented from the left</param>
+    ///
+    string[] resourcePages = new string[] { "FAQ Page", "Category Page", "Resource Catalog Page" };
+    int idcounter = 0;
+    int loopCounter = 0;
+    const string NAVLINK = "<a class=\"nav-link\" href=\"{0}\">{1}</a>"; /*<a class="nav-link" href="#">Link</a>*/
+    const string OPEN_LIST_TAG = "<ul>";
+
+    const string CLOSE_LIST_TAG = "</ul>";
+    const string OPEN_LIST_ITEM_TAG_NavItem = "<li class=\"nav-item\">";
+    const string OPEN_LIST_ITEM_TAG = "<li>";
+    const string OPEN_LIST_ITEM_TAG_ACTIVE = "<li class=\"nav-item active\">";
+
+    // for root level dropdowns
+    const string OPEN_LIST_ITEM_DD_TAG = "<li class=\"nav-item dropdown\">";
+    const string ROOT_DropDown_ActivatorLink = "<a class=\"nav-link dropdown-toggle\" href=\"{0}\" id=\"navbarDropdownMenuLink{1}\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">{2}</a>";
+    const string OPEN_LIST_TAG_DD_MENU = "<ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropDownMenuLink\">";
+    const string DropDownHrefItem = "<a class=\"dropdown-item\" href=\"{0}\">{1}</a>";
+    const string DropDownSubMenuToggle = "<a class=\"dropdown-item dropdown-toggle\" href=\"#\">{0}</a>";
+    const string DropDownSubMenu = "<ul class=\"dropdown-menu\">";
+    // end fro root level dropdowns
+
+    /*<ul class=\"dropdown-menu\"> */
+    // const string DropDownNavLink = "DropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">{1}</a> <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown{2}\">";
+
+    /*<a class=\"dropdown-item dropdown-toggle\" href=\"#\">*/
+
+    /* <a class=\"nav-link dropdown-toggle\" href=\"https://bootstrapthemes.co\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown link</a>   */
+
+    const string CLOSE_LIST_ITEM_TAG = "</li>";
+    const string DropDownDivider = "<div class=\"dropdown-divider\"></div>";
+    const string DropDownCloseTag = "/div>";
+
+    /// <summary>
+    /// build the menu recursively
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="liStrings"></param>
+    /// <param name="iTabIndex"></param>
+    public void GenerateHTML(System.Text.StringBuilder str, System.Collections.Generic.IEnumerable<Piranha.Models.SitemapItem> liStrings, int iTabIndex)
+    {
+        //add tabs to start of string
+
+        // AddTabs(str, iTabIndex);
+
+        str.Append(OPEN_LIST_TAG);
+
+
+        foreach (Piranha.Models.SitemapItem strParent in liStrings)
         {
-            var dd = "nav-item dropdown";
-            var nodd = "nav-item";
-            int cnt = 0;
-            if (!item.IsHidden && !item.HasChild(WebApp.PageId))
+            //add tabs for list item
+            //  AddTabs(str, iTabIndex + 1);
+
+            //if there are child strings for this string then loop through them recursively
+            if (strParent.Items.Count > 0 && !resourcePages.Contains( strParent.PageTypeName) )
             {
-                <li class="nav-item @(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? "active" : "")">
-                    <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>
-                </li>
+                str.Append(OPEN_LIST_ITEM_TAG + $"<a href=\"{strParent.Permalink}\">{strParent.MenuTitle}</a>");
+                GenerateHTML(str, strParent.Items, iTabIndex + 2);
+
+                //add tabs for closing list item tag
+                //  AddTabs(str, iTabIndex + 1);
+                str.Append(CLOSE_LIST_ITEM_TAG);
             }
-            @*sub menu*@
-            else if (!item.IsHidden && item.Items.Count > 0)
+            else
             {
-                var hiddenItems = item.Items.Where(x => x.IsHidden == true).ToList();
-                var shownItems = item.Items.Where(x => x.IsHidden == false).ToList();
-                if (null != shownItems && shownItems.Count > 0)
-                {
-                    <li class="nav-item dropdown  @(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? "active" : "")">
-                        <a href="@item.Permalink" class="nav-link dropdown-toggle" data-toggle="dropdown">@item.MenuTitle</a>
-
-                        <div class="dropdown-menu">
-                            @foreach (var subitem in shownItems)
-                            {
-                                <a href="@subitem.Permalink" class="dropdown-item">@subitem.MenuTitle</a>
-                            }
-                        </div>
-                    </li>
-                }
-                    else
-                    {
-
-                    }
+                //append opening and closing list item tags test for level 0 or
+                //  <li><a class="dropdown-item" href="#">Submenu action</a></li>
+                // greater than level 0  <li class="nav-item">
+                str.Append(OPEN_LIST_ITEM_TAG + $"<a href=\"{strParent.Permalink}\">{strParent.MenuTitle}</a>" + CLOSE_LIST_ITEM_TAG);
             }
         }
 
 
-        @*<li>
-                <a href="javascript:void(0)">Pages</a>
-                <ul>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="volunteer.html">Volunteer</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="donate-now.html">Donate Now</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li>
-                        <a href="javascript:void(0)">Others</a>
-                        <ul>
-                            <li><a href="tables.html">Tables</a></li>
-                            <li><a href="tabs-and-accordions.html">Tabs And Accordions</a></li>
-                            <li><a href="coming-soon.html">Comingsoon</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact Us</a></li>*@
-    </ul>
-    <!-- end menu Area -->
-    <!-- Start Atribute Navigation -->
-    <div class="attr-nav sm-no-margin sm-margin-65px-right xs-margin-60px-right">
-        <ul>
-            <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
-        </ul>
-    </div>
-    <!-- End Atribute Navigation -->
-</nav>
+        //add tabs for closing list tag
+        // AddTabs(str, iTabIndex);
+        //append closing list tag
+        str.Append(CLOSE_LIST_TAG);
+    }
 
 
 
 
-@*<div>
 
-        <nav class="navbar navbar-expand-md">
-            <div class="navbar-brand">
-                <a href="https://twitter.com/piranhacms" target="blank"><img src="~/assets/img/twitter.png"></a>
-                <a href="https://github.com/piranhacms/piranha.core" target="blank"><img src="~/assets/img/github.png"></a>
-            </div>
-            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mobileNavbar" aria-controls="mobileNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">&#9776;</span>
-            </button>
-            <div class="navbar-collapse collapse" id="mobileNavbar">
-                <ul class="justify-content-center navbar-nav mr-auto">
+    /// <summary>
+    /// Appends a number of tabs to the string builder
+    /// </summary>
+    /// <param name="str">The string builder to append to</param>
+    /// <param name="iTabIndex">The number of tabs to append to</param>
+    void AddTabs(System.Text.StringBuilder str, int iTabIndex)
+    {
+        for (int i = 0; i <= iTabIndex; i++)
+        {
+            str.Append("\t");
+        }
+    }
 
-                    @f oreach (var item in await WebApp.Site.Sitemap.ForUserAsync(User, Auth))
-                    {
-                        if (!item.IsHidden)
-                        {
-                            <li class="nav-item @(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? "active" : "")">
-                                <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>
-                            </li>
-                        }
-                    }
-                </ul>
-            </div>
-        </nav>
-    </div>*@
+
+
+
+}

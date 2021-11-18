@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="keywords" content="TakeMyHand Template" />
-    <meta name="description" content="TMH - TakeMyHand Template" />
+    <meta name="description" content="TMH - TakeMyHand Template Root" />
     <!-- title  -->
     <title>@ViewBag.Title</title>
     <!-- favicon -->
@@ -50,7 +50,7 @@
     </div>
     <!-- end page loading -->
     <!-- start main-wrapper section -->
-    <div class="main-wrapper" style="margin-top:20px;">
+    <div class="main-wrapper">
 
         <!-- start header section -->
         <header class="header-style1 menu_area-light">
@@ -85,29 +85,29 @@
             </div>
         </header>
         <!-- end header section -->
-        <!-- Main Body Render() -->
-        <div class="container-fluid">
+        <!-- Main Body Render() no p-5 for now -->
+        <div class="containera-fluid">
             @RenderBody()
-       
+
             @*<footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                            Copyright &copy; 2021 TAKEMYHAND | <a href="https://twitter.com/takemyhandco">@@takemyhandco</a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                Copyright &copy; 2021 TAKEMYHAND | <a href="https://twitter.com/takemyhandco">@@takemyhandco</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </footer>*@
+                </footer>*@
         </div>
         <!-- End Main Body Render() -->
-       <div class="container-fluid clearfix">&nbsp;</div>
+        <div class="container-fluid clearfix">&nbsp;</div>
         <!-- start footer section -->
         <footer class="bg-img background-size-contain" data-overlay-dark="1" data-background="~/assets/img/content/dotted-map.png">
             <div class="container">
                 <div class="row">
 
                     <div class="col-lg-4 col-md-12 sm-margin-30px-bottom">
-                        <div class="margin-15px-bottom"><img src="img/logos/logo-footer.png" alt="" /></div>
+                        <div class="margin-15px-bottom"><img src="~/assets/img/logos/logo-footer.png" alt="" /></div>
                         <p class="margin-15px-bottom">Take My Hand Riverside</p>
                         <p class="margin-10px-bottom"><i class="fas fa-map-marker-alt text-hightlight-color padding-10px-right"></i><strong class="text-white padding-10px-right opacity7">Address:</strong><span>2085 Rustin Ave. <br />Riverside, CA 92503</span></p>
                         <p class="margin-10px-bottom"><i class="fas fa-phone text-hightlight-color padding-10px-right"></i><strong class="text-white padding-10px-right opacity7">Phone:</strong><span>(800) 555-1212</span></p>
@@ -239,9 +239,17 @@
     <script src="~/assets/js/mailform/jquery.rd-mailform.min.c.js"></script>
 
     <!-- all js include end -->
+    <!-- LiveChat -->
+    <script type="text/javascript">
+        window.__lc = window.__lc || {};
+        window.__lc.license = 11361022;
+        (function () {
+            var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+            lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+        })();
+    </script>
 
-
-
-@RenderSection("script", required: false)
+    @RenderSection("script", required: false)
 </body>
 </html>

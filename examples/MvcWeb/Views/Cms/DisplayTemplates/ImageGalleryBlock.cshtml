@@ -48,11 +48,11 @@
                 <source srcset="@Url.Content(WebApp.Media.ResizeImage(image, 800, 450))" class="d-block w-100 rounded" media="(min-width: 577px)">
                 <img srcset="@Url.Content(WebApp.Media.ResizeImage(image, 600, 340))" alt="@image.AltText" title="@image.Title" class="d-block img-fluid">
             </picture>
-            <div class="carousel-caption"  style="background: rgba(0, 0, 0, 0.35);">
+            <div class="rounded theme-overlay alt-font"  style="background: rgba(0, 0, 0, 0.25);">
                 <div>
-                    <div style="margin-top:10px;">&nbsp;</div>
-                    <h4 class="text-theme-color animated fadeInRight d-none d-md-block">@image.Title</h4>
-                    <p class="text-whitea">@image.Description</p>
+                    @*<div style="margin-top:10px;">&nbsp;</div>*@
+                    <h4 class="text-center rounded text-theme-color animated fadeInRight d-none d-md-block">@image.Title</h4>
+                    <p class="rounded text-whitea">@image.Description</p>
                     @*<span class="btn btn-sm btn-secondary">Learn How</span>*@
                 </div>
             </div>

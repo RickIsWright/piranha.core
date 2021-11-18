@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="Views\Cms\DisplayTemplates\ImageGalleryBlockFSa.cshtml" />
+    <Content Remove="Views\Shared\Partial\_MenuTMH2-cshtml.bak.cshtml" />
     <Content Remove="wwwroot\assets\css\styles.css" />
     <Content Remove="wwwroot\assets\css\styles.css.map" />
     <Content Remove="wwwroot\assets\img\banner\page-title.jpg" />
@@ -273,6 +274,7 @@
     <None Remove="assets\js\stellar.js" />
     <None Remove="assets\setup\css\style.css" />
     <None Remove="assets\setup\img\ocean.jpg" />
+    <None Remove="Views\Shared\Partial\_MenuTMH2-cshtml.bak" />
   </ItemGroup>
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\assets\css\plugins.css" />

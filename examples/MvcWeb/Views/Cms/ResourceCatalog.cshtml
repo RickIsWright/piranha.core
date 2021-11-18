@@ -1,29 +1,44 @@
 @using MvcWeb.Models
 @model ResourceCatalogViewModel
-@{
-  ViewBag.Title = Model.ResourceCatalogPage.Title;
-}
+@{ ViewBag.Title = Model.ResourceCatalogPage.Title; }
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-10">
-      <h1 class="display-3">@Model.ResourceCatalogPage.Title</h1>
-    </div>
-  </div>
-  <div class="row">
-  @foreach(ResourceCategoryItem c in Model.ResourceCategories)
-  {
-    <div class="col-sm-4">
-      <a class="card-link" href="@c.PageUrl">
-        <div class="card border-dark" style="width: 18rem;">
-          <img class="card-img-top" src="@c.ImageUrl" 
-            alt="Image of @c.Title" asp-append-version="true" />
-          <div class="card-body">
-            <h5 class="card-title text-info">@c.Title</h5>
-            <div class="card-text text-info">@Html.Raw(c.Description)</div>
-          </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-12">
+            <h2 class="display-4 d-none d-sm-block d-sm-none d-md-block">@Model.ResourceCatalogPage.Title</h2>
         </div>
-      </a>
     </div>
-  }
-  </div>
+    @{ int loop = 0;}
+
+    @foreach (ResourceCategoryItem c in Model.ResourceCategories)
+    {
+        @if (loop % 3 == 0 || loop==0)
+        {
+        @:<div class="row p-1 mb-3">
+            }
+                <div class="col-sm-4">
+                    <a class="card-link" href="@c.PageUrl">
+                        <div class="card border-dark" style="width: 18rem;">
+                            <img class="card-img-top" src="@c.ImageUrl"
+                                 alt="Image of @c.Title" asp-append-version="true" />
+                            <div class="card-body">
+                                <h5 class="card-title text-info">@c.Title</h5>
+                                <div class="card-text text-info">@Html.Raw(c.Description)</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            @if (loop % 2 == 0 && loop !=0)
+            {
+                    @:</div> <!--close div-->
+                  loop  =-1;
+            }
+        loop++;
+    } @*end for*@
+
+    @if( --loop!=0 && loop %2 !=0)
+    {
+        @:</div> <!--close div-->
+    }
+
 </div>

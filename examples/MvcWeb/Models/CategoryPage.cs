@@ -9,12 +9,12 @@ namespace MvcWeb.Models
   [ContentTypeRoute(Title = "Default", Route = "/catalog-category")]
   public class CategoryPage : Page<CategoryPage>
   {
-    [Region(Title = "Category detail")]
+    [Region(Title = "Category Detail")]
     [RegionDescription("The details for this category.")]
     public CategoryRegion CategoryDetail { get; set; }
 
-    [Region(Title = "Category products")]
-    [RegionDescription("The products for this category.")]
+    [Region(Title = "Category SubItems")]
+    [RegionDescription("The SubItems for this category.")]
     public IList<ProductRegion> Products
       { get; set; } = new List<ProductRegion>();
   }
