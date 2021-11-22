@@ -5,7 +5,10 @@
 }
 
 <style>
-
+    .full-screen-carousel {
+        height: 100vh;
+        /*margin-top: -100px;*/
+    }
         /*
     Removes white gap between slides - chagnge to base color of slide images
     */
@@ -21,13 +24,14 @@
         }
 
         /*
-    anchors are inline so you need ot make them block to go full width
+    anchors are inline so you need to make them block to go full width
     */
         .carousel-item a {
             display: block;
             width: 100%;
         }
 </style>
+<div class="container">
 <div id="@unique" class="carousel slide gallery-block" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
         @for (var n = 0; n < Model.Items.Count; n++)
@@ -51,8 +55,8 @@
             <div class="rounded theme-overlay alt-font"  style="background: rgba(0, 0, 0, 0.25);">
                 <div>
                     @*<div style="margin-top:10px;">&nbsp;</div>*@
-                    <h4 class="text-center rounded text-theme-color animated fadeInRight d-none d-md-block">@image.Title</h4>
-                    <p class="rounded text-whitea">@image.Description</p>
+                    <h4 class="text-center rounded text-color-carousel-caption animated fadeInRight d-none d-md-block">@image.Title</h4>
+                    <p class="rounded text-black-50 p-sm-1 p-md-2">@image.Description</p>
                     @*<span class="btn btn-sm btn-secondary">Learn How</span>*@
                 </div>
             </div>
@@ -68,4 +72,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+</div>
+
 </div>

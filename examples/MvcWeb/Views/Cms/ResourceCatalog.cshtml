@@ -1,10 +1,13 @@
 @using MvcWeb.Models
 @model ResourceCatalogViewModel
 @{ ViewBag.Title = Model.ResourceCatalogPage.Title; }
-<div class="container">
+<div class="container" style="margin-left:-8px;">
+    <br /><br /><br />
     <div class="row justify-content-center">
         <div class="col-sm-12">
-            <h2 class="display-4 d-none d-sm-block d-sm-none d-md-block">@Model.ResourceCatalogPage.Title</h2>
+            <!--display-4 d-none d-sm-block d-sm-none d-md-block-->
+            <!--font-size36 md-font-size32 sm-font-size28 text-hightlight-color margin-15px-bottom sm-margin-10px-bottom-->
+            <h2 class="font-size36 md-font-size32 sm-font-size28 text-hightlight-color margin-15px-bottom sm-margin-10px-bottom">@Model.ResourceCatalogPage.Title</h2>
         </div>
     </div>
     @{ int loop = 0;}
@@ -15,7 +18,7 @@
         {
         @:<div class="row p-1 mb-3">
             }
-                <div class="col-sm-4">
+                <div class="col-sm-4 mb-2 m-sm-0">
                     <a class="card-link" href="@c.PageUrl">
                         <div class="card border-dark" style="width: 18rem;">
                             <img class="card-img-top" src="@c.ImageUrl"
@@ -30,7 +33,7 @@
 
             @if (loop % 2 == 0 && loop !=0)
             {
-                    @:</div> <!--close div-->
+                    @:</div> <!--close div inside final-->
                   loop  =-1;
             }
         loop++;
@@ -38,7 +41,7 @@
 
     @if( --loop!=0 && loop %2 !=0)
     {
-        @:</div> <!--close div-->
+        @:</div> <!--close div outside final-->
     }
 
-</div>
+</div><!--end container ResourceCatalog-->

@@ -1,0 +1,7 @@
+﻿
+@model Piranha.Extend.Blocks.RawHtmlContentBlock
+    @*System.Net.WebUtility.HtmlDecode*@
+    <div class="raw-html-block">
+        @Html.Raw(Model.Body.Value)
+    </div>
+

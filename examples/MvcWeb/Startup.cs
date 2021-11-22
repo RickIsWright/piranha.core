@@ -22,6 +22,7 @@ using Piranha.Data.EF.SQLServer;
 using Microsoft.Extensions.Configuration;
 using Piranha.AspNetCore.Identity.SQLServer;
 using Piranha.Extend.Blocks;
+using WebOptimizer;
 
 namespace MvcWeb
 {
@@ -48,6 +49,7 @@ namespace MvcWeb
                 options.UseImageSharp();
                 options.UseManager();
                 options.UseTinyMCE();
+                
                 options.UseMemoryCache();
                 // sql server
                 options.UseEF<SQLServerDb>(db =>
@@ -66,6 +68,10 @@ namespace MvcWeb
                     o.UsePermission("Subscriber");
                 });
             });
+
+            // WebOptimizer 2021-11-19 R. Wright
+            services.AddMvc();
+            services.AddWebOptimizer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,13 +81,19 @@ namespace MvcWeb
             {
                 app.UseDeveloperExceptionPage();
             }
+            // WebOptimizer 2021-11-19 R. Wright
+            app.UseWebOptimizer();
 
             App.Init(api);
 
             // Configure cache level
             App.CacheLevel = Piranha.Cache.CacheLevel.Full;
 
-            Piranha.App.Blocks.Register<YoutubeBlock>();
+            Piranha.App.Blocks.Register<YoutubeBlock>(); // Register the YouTube raw html content block
+            Piranha.App.Blocks.Register<RawHtmlContentBlock>(); // Register the Raw HTML content block
+            // Add the manager scripts for the RawHtmlContentBlock
+            App.Modules.Manager().Scripts.Add("~/rawhtmlcontent.js");
+            App.Modules.Manager().Styles.Add("~/rawhtmlcontent.css");
 
             // Build content types
             new ContentTypeBuilder(api)
@@ -108,7 +120,7 @@ namespace MvcWeb
                 options.UseIdentity();
             });
 
-             // Seed.RunAsync(api).GetAwaiter().GetResult();
+            // Seed.RunAsync(api).GetAwaiter().GetResult();
         }
     }
 }

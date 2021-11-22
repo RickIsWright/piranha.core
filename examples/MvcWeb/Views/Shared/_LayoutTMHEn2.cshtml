@@ -1,4 +1,4 @@
-@using Microsoft.AspNetCore.Hosting
+﻿@using Microsoft.AspNetCore.Hosting
 @using Microsoft.Extensions.Hosting
 @inject IWebHostEnvironment Env
 
@@ -6,6 +6,20 @@
 <html lang="en">
 
 <head>
+    <!--Google Analytics-->
+    @if (!User.Identity.IsAuthenticated && !Env.IsDevelopment())
+    {
+        <!-- Insert Google Analytics here -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56L3ZVQE6R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-56L3ZVQE6R');
+    </script>
+    }
 
     <!-- metas -->
     <meta charset="utf-8">
@@ -17,9 +31,11 @@
     <!-- title  -->
     <title>@ViewBag.Title</title>
     <!-- favicon -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:700|Open+Sans:300,400,600">
     <link rel="stylesheet" href="~/assets/css/plugins.css">
+
 
     <link rel="shortcut icon" href="~/assets/tmh/img/logos/favicon.png" />
     <link rel="shortcut icon" href="~/assets/tmh/img/logos/favicon.png">
@@ -36,7 +52,7 @@
 
     <!-- core style css -->
     <link href="~/assets/css/styles.css" rel="stylesheet">
-
+    <link href="~/assets/css/cookiealert.css" rel="stylesheet" />
     @RenderSection("head", required: false)
 </head>
 
@@ -86,7 +102,8 @@
         </header>
         <!-- end header section -->
         <!-- Main Body Render() no p-5 for now -->
-        <div class="containera-fluid">
+        <div class="container">
+            @*<br /><br /><br />*@
             @RenderBody()
 
             @*<footer>
@@ -118,16 +135,16 @@
                     <div class="col-lg-5 col-md-12 sm-margin-30px-bottom">
                         <h3 class="small-title text-white">Quick Links</h3>
                         <ul class="list-style3">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="donate-now.html">Donate Now</a></li>
-                            <li><a href="volunteer.html">Volunteer</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="causes-list.html">Causes List</a></li>
-                            <li><a href="event-details.html">Event Details</a></li>
-                            <li><a href="causes-detail.html">Causes Detail</a></li>
-                            <li><a href="blog-default.html">Blog Default</a></li>
+                            <li><a href="~/about">About Us</a></li>
+                            @*<li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="donate-now.html">Donate Now</a></li>
+                                <li><a href="volunteer.html">Volunteer</a></li>*@
+                            <li><a href="about-contact-us">Contact Us</a></li>
+                            @*<li><a href="causes-list.html">Causes List</a></li>
+                                <li><a href="event-details.html">Event Details</a></li>
+                                <li><a href="causes-detail.html">Causes Detail</a></li>
+                                <li><a href="blog-default.html">Blog Default</a></li>*@
                         </ul>
                     </div>
 
@@ -184,6 +201,15 @@
         <!-- end footer section -->
 
     </div>
+    <!--cookie alert div -->
+    <div class="alert text-center cookiealert" role="alert">
+        <b>Please read our cookies policy</b> &#x1F36A; We use <a href="~/CookiePolicy" target="_blank">
+            cookies
+        </a> to ensure you get the best experience on our website. <a href="/Home/CookiePolicy" target="_blank">More...</a>
+        <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+            Got It!
+        </button>
+    </div>
     <!-- end main-wrapper section -->
     <!-- start scroll to top -->
     <a href="javascript:void(0)" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
@@ -233,6 +259,8 @@
 
     <!-- custom scripts -->
     <script src="~/assets/js/main.js"></script>
+    <!--cookiealert-->
+    <script src="~/assets/js/cookiealert.js"></script>
 
     <!-- contact form scripts -->
     <script src="~/assets/js/mailform/jquery.form.min.js"></script>
@@ -249,7 +277,14 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
         })();
     </script>
+    <!--Hours On Script-->
+    <script>
+        // hours on script
+        $(document).ready(function () {
+            $('#hours-on').show().delay(60000).fadeOut();
 
+        });
+    </script>
     @RenderSection("script", required: false)
 </body>
 </html>

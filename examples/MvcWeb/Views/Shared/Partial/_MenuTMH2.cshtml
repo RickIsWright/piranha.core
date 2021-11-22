@@ -2,9 +2,17 @@
 @inject Microsoft.AspNetCore.Authorization.IAuthorizationService Auth
 
 @{
-    var sitemap = await WebApp.Api.Sites.GetSitemapAsync(); // Site.Sitemap; //  //.ForUserAsync(User, Auth);
-    var partial = sitemap.GetPartial(WebApp.CurrentPage.Id);
-    var currentPermalink = WebApp.CurrentPage.Permalink;
+    // var sitemap = await WebApp.Api.Sites.GetSitemapAsync(); // Site.Sitemap; //  //.ForUserAsync(User, Auth);
+    // var partial = sitemap.GetPartial(WebApp.CurrentPage.Id);
+    string currentPermalink = "/home";
+    try
+    {
+        if (WebApp.CurrentPage !=null && WebApp.CurrentPage.IsPublished)
+        {
+            currentPermalink = WebApp.CurrentPage.Permalink;
+        }
+    }
+    catch { }
     var menuItems = await WebApp.Site.Sitemap.ForUserAsync(User, Auth);
     System.Text.StringBuilder sbr = new System.Text.StringBuilder();
     GenerateHTML(sbr, menuItems, 3);
@@ -143,7 +151,7 @@
             //  AddTabs(str, iTabIndex + 1);
 
             //if there are child strings for this string then loop through them recursively
-            if (strParent.Items.Count > 0 && !resourcePages.Contains( strParent.PageTypeName) )
+            if (strParent.Items.Count > 0 && !resourcePages.Contains( strParent.PageTypeName) && !strParent.IsHidden )
             {
                 str.Append(OPEN_LIST_ITEM_TAG + $"<a href=\"{strParent.Permalink}\">{strParent.MenuTitle}</a>");
                 GenerateHTML(str, strParent.Items, iTabIndex + 2);
@@ -157,6 +165,7 @@
                 //append opening and closing list item tags test for level 0 or
                 //  <li><a class="dropdown-item" href="#">Submenu action</a></li>
                 // greater than level 0  <li class="nav-item">
+                if(  !strParent.IsHidden)
                 str.Append(OPEN_LIST_ITEM_TAG + $"<a href=\"{strParent.Permalink}\">{strParent.MenuTitle}</a>" + CLOSE_LIST_ITEM_TAG);
             }
         }

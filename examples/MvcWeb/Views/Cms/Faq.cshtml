@@ -12,27 +12,29 @@
     }
 
 <div class="container">
+    <br />
+    @*<h2 class="font-size36 md-font-size32 sm-font-size28 text-hightlight-color margin-15px-bottom sm-margin-10px-bottom">FAQ</h2*@
     @*<div class="row justify-content-center">
-        <div class="col-sm-10">
-            <h1 class="display-3">@ Model.FaqPage.Title</h1>
+            <div class="col-sm-10">
+                <h1 class="display-3">@ Model.FaqPage.Title</h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        @ foreach (ResourceCategoryItem c in Model.ResourceCategories)
-        {
-            <div class="col-sm-4">
-                <a class="card-link" href="@c.PageUrl">
-                    <div class="card border-dark" style="width: 18rem;">
-                        <img class="card-img-top" src="@c.ImageUrl"
-                             alt="Image of @c.Title" asp-append-version="true" />
-                        <div class="card-body">
-                            <h5 class="card-title text-info">@c.Title</h5>
-                            <div class="card-text text-info">@Html.Raw(@c.Description)</div>
+        <div class="row">
+            @ foreach (ResourceCategoryItem c in Model.ResourceCategories)
+            {
+                <div class="col-sm-4">
+                    <a class="card-link" href="@c.PageUrl">
+                        <div class="card border-dark" style="width: 18rem;">
+                            <img class="card-img-top" src="@c.ImageUrl"
+                                 alt="Image of @c.Title" asp-append-version="true" />
+                            <div class="card-body">
+                                <h5 class="card-title text-info">@c.Title</h5>
+                                <div class="card-text text-info">@Html.Raw(@c.Description)</div>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>}
-    </div>*@
+                    </a>
+                </div>}
+        </div>*@
 
     <!-- start faq section -->
     <section class="faq-section">
@@ -45,25 +47,25 @@
                             @{ int id = 1;}
                             @foreach (ResourceCategoryItem c in Model.ResourceCategories)
                             {
-                                
+
                                 <div class="card">
                                     <div class="card-header" id="@("heading" + @id.ToString())">
                                         <h5 class="mb-0">
-                                            <button  class="@(id==1? "btn btn-link":"btn btn-link collapsed")"  data-toggle="collapse" data-target="@("#collapse" + id.ToString())" aria-expanded="true" aria-controls="@("collapse" + id.ToString())">
+                                            <button class="@(id==1? "btn btn-link":"btn btn-link collapsed")" data-toggle="collapse" data-target="@("#collapse" + id.ToString())" aria-expanded="true" aria-controls="@("collapse" + id.ToString())">
                                                 <text>@c.Title</text>
                                             </button>
                                         </h5>
                                     </div>
                                     <div id="@("collapse" + id.ToString())" class="@(id==1? "collapse show":"collapse")" aria-labelledby="@("heading" + @id.ToString())" data-parent="#accordion">
                                         <div class="card-body">
-                                           @Html.Raw(@c.Description)
+                                            @Html.Raw(@c.Description)
                                         </div>
                                     </div>
                                 </div>
                                 id += 1;
                             }
-                                
-                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
