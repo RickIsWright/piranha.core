@@ -1,3 +1,5 @@
+using System;
+
 namespace MvcWeb.Models
 {
     // Kind of like products as an analogy. R. Wright
@@ -7,5 +9,8 @@ namespace MvcWeb.Models
     public string Description { get; set; }
     public string PageUrl { get; set; }
     public string ImageUrl { get; set; }
+    
+        public DateTime Created { get; set; }
+        public string CreatedBy { get; set; }
   }
 }

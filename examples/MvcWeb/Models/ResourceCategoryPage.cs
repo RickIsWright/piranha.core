@@ -11,7 +11,7 @@ namespace MvcWeb.Models
     public class ResourceCategoryPage : Page<ResourceCategoryPage>
   {
     [Region(Title = "Resource Category Detail")]
-    [RegionDescription("Deetails for this resource category.")]
+    [RegionDescription("Details for this resource category.")]
     public ResourceCategoryRegion ResourceCategoryDetail { get; set; }
 
     [Region(Title = "Resource sublist")]

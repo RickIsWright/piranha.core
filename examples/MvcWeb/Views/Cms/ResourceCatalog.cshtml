@@ -16,20 +16,23 @@
     {
         @if (loop % 3 == 0 || loop==0)
         {
-        @:<div class="row p-1 mb-3">
+        @:<div class="card-group">
             }
-                <div class="col-sm-4 mb-2 m-sm-0">
-                    <a class="card-link" href="@c.PageUrl">
-                        <div class="card border-dark" style="width: 18rem;">
-                            <img class="card-img-top" src="@c.ImageUrl"
-                                 alt="Image of @c.Title" asp-append-version="true" />
-                            <div class="card-body">
-                                <h5 class="card-title text-info">@c.Title</h5>
-                                <div class="card-text text-info">@Html.Raw(c.Description)</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @*<div class="col-sm-4 mb-2 m-sm-0">*@
+                    @*<a class="card-link" href="@c.PageUrl">*@
+              <div class="card">
+                  <img class="card-img-top" src="@c.ImageUrl"
+                       alt="Image of @c.Title" asp-append-version="true" />
+                  <div class="card-body">
+                      <h5 class="card-title">@c.Title</h5>
+                      <div class="card-text text-info">@Html.Raw(c.Description)</div>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last Updated: @WebApp.</small>
+                  </div>
+              </div>
+                    @*</a>*@
+                @*</div>*@
 
             @if (loop % 2 == 0 && loop !=0)
             {

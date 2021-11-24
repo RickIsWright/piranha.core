@@ -18,6 +18,8 @@ namespace MvcWeb.Models
         [Field(Title = "Optional Resource ID")]
         public NumberField CategoryID { get; set; }
 
+
+
         //[Field(Title ="Show Child Items")]
         //public CheckBoxField ShowChildItems { get; set; }
     }
